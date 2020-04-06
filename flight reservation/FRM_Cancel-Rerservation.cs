@@ -20,7 +20,7 @@ namespace flight_reservation
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form5 f = new Form5();
+            FRM_Home f = new FRM_Home();
             f.Show();
         }
     }

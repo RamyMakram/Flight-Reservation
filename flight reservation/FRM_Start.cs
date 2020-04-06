@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace flight_reservation
 {
-    public partial class Form7 : Form
+    public partial class FRM_Start : Form
     {
-        public Form7()
+        public FRM_Start()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form5 f = new Form5();
+            FRM_Home f = new FRM_Home();
             f.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

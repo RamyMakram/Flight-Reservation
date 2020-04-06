@@ -45,59 +45,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="booking.cs">
+    <Compile Include="FRM_Book.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="booking.Designer.cs">
-      <DependentUpon>booking.cs</DependentUpon>
+    <Compile Include="FRM_Book.Designer.cs">
+      <DependentUpon>FRM_Book.cs</DependentUpon>
     </Compile>
-    <Compile Include="cancel.cs">
+    <Compile Include="FRM_Cancel-Rerservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cancel.Designer.cs">
-      <DependentUpon>cancel.cs</DependentUpon>
+    <Compile Include="FRM_Cancel-Rerservation.Designer.cs">
+      <DependentUpon>FRM_Cancel-Rerservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="FRM_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="FRM_Home.Designer.cs">
+      <DependentUpon>FRM_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="FRM_Check-Reserv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="FRM_Check-Reserv.Designer.cs">
+      <DependentUpon>FRM_Check-Reserv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="FRM_Reservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="FRM_Reservations.Designer.cs">
+      <DependentUpon>FRM_Reservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FRM_Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FRM_Start.Designer.cs">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="FRM_Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="FRM_Register.Designer.cs">
+      <DependentUpon>FRM_Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="Contact-Us.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="Contact-Us.Designer.cs">
+      <DependentUpon>Contact-Us.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,32 +131,32 @@
     <Compile Include="UserControl4.Designer.cs">
       <DependentUpon>UserControl4.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="booking.resx">
-      <DependentUpon>booking.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Book.resx">
+      <DependentUpon>FRM_Book.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cancel.resx">
-      <DependentUpon>cancel.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Cancel-Rerservation.resx">
+      <DependentUpon>FRM_Cancel-Rerservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Home.resx">
+      <DependentUpon>FRM_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Check-Reserv.resx">
+      <DependentUpon>FRM_Check-Reserv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Reservations.resx">
+      <DependentUpon>FRM_Reservations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Start.resx">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Register.resx">
+      <DependentUpon>FRM_Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="Contact-Us.resx">
+      <DependentUpon>Contact-Us.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

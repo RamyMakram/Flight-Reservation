@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace flight_reservation
 {
-    public partial class Form5 : Form
+    public partial class FRM_Home : Form
     {
-        public Form5()
+        public FRM_Home()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace flight_reservation
 
         private void button7_Click(object sender, EventArgs e)
         {
-            booking myNewForm = new booking();
+            FRM_Book myNewForm = new FRM_Book();
 
             myNewForm.Show();
             this.Hide();
@@ -42,7 +42,7 @@ namespace flight_reservation
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form2 fory = new Form2();
+            FRM_Login fory = new FRM_Login();
             fory.Show();
             this.Hide();
         }
@@ -56,7 +56,7 @@ namespace flight_reservation
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Form4 f = new Form4();
+            FRM_Reservations f = new FRM_Reservations();
             f.Show();
             this.Hide();
         }
@@ -69,7 +69,7 @@ namespace flight_reservation
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
+            FRM_Start f = new FRM_Start();
             f.Show();
         }
 

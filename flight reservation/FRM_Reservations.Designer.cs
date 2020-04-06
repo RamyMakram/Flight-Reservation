@@ -1,6 +1,6 @@
 ﻿namespace flight_reservation
 {
-    partial class Form4
+    partial class FRM_Reservations
     {
         /// <summary>
         /// Required designer variable.

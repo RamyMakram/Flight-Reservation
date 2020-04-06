@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace flight_reservation
 {
-    public partial class Form4 : Form
+    public partial class FRM_Register : Form
     {
-        public Form4()
+        public FRM_Register()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form5 f = new Form5();
+            FRM_Login f = new FRM_Login();
             f.Show();
         }
     }
