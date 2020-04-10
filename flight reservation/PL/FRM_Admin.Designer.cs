@@ -56,14 +56,6 @@
 			this.BTN_SavePass = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.DGV_Pass = new System.Windows.Forms.DataGridView();
-			this.PASSENGER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_FNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_LNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.View = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.BTN_AddAir = new System.Windows.Forms.Button();
 			this.TXT_AirCity = new System.Windows.Forms.TextBox();
@@ -89,11 +81,28 @@
 			this.BTN_SavePlane = new System.Windows.Forms.Button();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.DGV_Planes = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.View_Fligths = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.DGV_Flights = new System.Windows.Forms.DataGridView();
+			this.F_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FROM_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FROM_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TO_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TO_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.STATUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PlaneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.TXT_FlightPrice = new System.Windows.Forms.NumericUpDown();
 			this.CB_From = new System.Windows.Forms.ComboBox();
+			this.CB_FligthPNum = new System.Windows.Forms.ComboBox();
 			this.CB_Sate = new System.Windows.Forms.ComboBox();
 			this.CB_To = new System.Windows.Forms.ComboBox();
 			this.TXT_FligthID = new System.Windows.Forms.TextBox();
@@ -103,6 +112,7 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
@@ -119,24 +129,13 @@
 			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.label16 = new System.Windows.Forms.Label();
-			this.CB_FligthPNum = new System.Windows.Forms.ComboBox();
-			this.F_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.FROM_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.FROM_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TO_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TO_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.STATUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PlaneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.View_Fligths = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.PASSENGER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_FNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_LNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.View = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.DGV_Pass)).BeginInit();
@@ -309,7 +308,6 @@
             this.PASSENGER_FNAME,
             this.PASSENGER_LNAME,
             this.PASSENGER_EMAIL,
-            this.PASSENGER_PASSWORD,
             this.PASSENGER_PHONE,
             this.Delete,
             this.View});
@@ -331,77 +329,6 @@
 			this.DGV_Pass.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Pass.TabIndex = 1;
 			this.DGV_Pass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pass_CellClick);
-			// 
-			// PASSENGER_ID
-			// 
-			this.PASSENGER_ID.HeaderText = "Passanger ID";
-			this.PASSENGER_ID.MinimumWidth = 6;
-			this.PASSENGER_ID.Name = "PASSENGER_ID";
-			this.PASSENGER_ID.ReadOnly = true;
-			this.PASSENGER_ID.Visible = false;
-			// 
-			// PASSENGER_FNAME
-			// 
-			this.PASSENGER_FNAME.FillWeight = 122.5225F;
-			this.PASSENGER_FNAME.HeaderText = "First Name";
-			this.PASSENGER_FNAME.MinimumWidth = 6;
-			this.PASSENGER_FNAME.Name = "PASSENGER_FNAME";
-			this.PASSENGER_FNAME.ReadOnly = true;
-			// 
-			// PASSENGER_LNAME
-			// 
-			this.PASSENGER_LNAME.FillWeight = 122.5225F;
-			this.PASSENGER_LNAME.HeaderText = "Last Name";
-			this.PASSENGER_LNAME.MinimumWidth = 6;
-			this.PASSENGER_LNAME.Name = "PASSENGER_LNAME";
-			this.PASSENGER_LNAME.ReadOnly = true;
-			// 
-			// PASSENGER_EMAIL
-			// 
-			this.PASSENGER_EMAIL.FillWeight = 122.5225F;
-			this.PASSENGER_EMAIL.HeaderText = "Email";
-			this.PASSENGER_EMAIL.MinimumWidth = 6;
-			this.PASSENGER_EMAIL.Name = "PASSENGER_EMAIL";
-			this.PASSENGER_EMAIL.ReadOnly = true;
-			// 
-			// PASSENGER_PASSWORD
-			// 
-			this.PASSENGER_PASSWORD.FillWeight = 122.5225F;
-			this.PASSENGER_PASSWORD.HeaderText = "Password";
-			this.PASSENGER_PASSWORD.MinimumWidth = 6;
-			this.PASSENGER_PASSWORD.Name = "PASSENGER_PASSWORD";
-			this.PASSENGER_PASSWORD.ReadOnly = true;
-			// 
-			// PASSENGER_PHONE
-			// 
-			this.PASSENGER_PHONE.FillWeight = 122.5225F;
-			this.PASSENGER_PHONE.HeaderText = "Phone";
-			this.PASSENGER_PHONE.MinimumWidth = 6;
-			this.PASSENGER_PHONE.Name = "PASSENGER_PHONE";
-			this.PASSENGER_PHONE.ReadOnly = true;
-			// 
-			// Delete
-			// 
-			this.Delete.FillWeight = 42.46774F;
-			this.Delete.HeaderText = "❌";
-			this.Delete.MinimumWidth = 12;
-			this.Delete.Name = "Delete";
-			this.Delete.ReadOnly = true;
-			this.Delete.Text = "❌";
-			this.Delete.ToolTipText = "Delete";
-			this.Delete.UseColumnTextForButtonValue = true;
-			// 
-			// View
-			// 
-			this.View.FillWeight = 44.91978F;
-			this.View.HeaderText = "👁‍🗨";
-			this.View.MinimumWidth = 12;
-			this.View.Name = "View";
-			this.View.ReadOnly = true;
-			this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.View.Text = "👁‍🗨";
-			this.View.ToolTipText = "View Fligths";
-			this.View.UseColumnTextForButtonValue = true;
 			// 
 			// groupBox3
 			// 
@@ -724,6 +651,63 @@
 			this.DGV_Planes.TabIndex = 1;
 			this.DGV_Planes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Planes_CellClick);
 			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+			this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.FillWeight = 93.36237F;
+			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			this.dataGridViewTextBoxColumn4.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this.dataGridViewTextBoxColumn5.FillWeight = 93.36237F;
+			this.dataGridViewTextBoxColumn5.HeaderText = "Number Of Sets";
+			this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			this.dataGridViewTextBoxColumn5.ReadOnly = true;
+			// 
+			// dataGridViewButtonColumn3
+			// 
+			this.dataGridViewButtonColumn3.FillWeight = 32.3605F;
+			this.dataGridViewButtonColumn3.HeaderText = "❌";
+			this.dataGridViewButtonColumn3.MinimumWidth = 12;
+			this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+			this.dataGridViewButtonColumn3.ReadOnly = true;
+			this.dataGridViewButtonColumn3.Text = "❌";
+			this.dataGridViewButtonColumn3.ToolTipText = "Delete";
+			this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+			// 
+			// Edit
+			// 
+			this.Edit.FillWeight = 32.3605F;
+			this.Edit.HeaderText = "✏";
+			this.Edit.MinimumWidth = 12;
+			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
+			this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.Edit.Text = "✏";
+			this.Edit.ToolTipText = "Edit";
+			this.Edit.UseColumnTextForButtonValue = true;
+			// 
+			// View_Fligths
+			// 
+			this.View_Fligths.FillWeight = 32.3605F;
+			this.View_Fligths.HeaderText = "👁‍🗨";
+			this.View_Fligths.MinimumWidth = 6;
+			this.View_Fligths.Name = "View_Fligths";
+			this.View_Fligths.ReadOnly = true;
+			this.View_Fligths.Text = "👁‍🗨";
+			this.View_Fligths.ToolTipText = "View Last Flight Time";
+			this.View_Fligths.UseColumnTextForButtonValue = true;
+			// 
 			// groupBox7
 			// 
 			this.groupBox7.Controls.Add(this.DGV_Flights);
@@ -778,6 +762,76 @@
 			this.DGV_Flights.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Flights.TabIndex = 1;
 			this.DGV_Flights.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Flights_CellClick);
+			// 
+			// F_ID
+			// 
+			this.F_ID.HeaderText = "ID";
+			this.F_ID.MinimumWidth = 6;
+			this.F_ID.Name = "F_ID";
+			this.F_ID.Visible = false;
+			// 
+			// FROM_CODE
+			// 
+			this.FROM_CODE.HeaderText = "From";
+			this.FROM_CODE.MinimumWidth = 6;
+			this.FROM_CODE.Name = "FROM_CODE";
+			// 
+			// FROM_TIME
+			// 
+			this.FROM_TIME.HeaderText = "From Time";
+			this.FROM_TIME.MinimumWidth = 6;
+			this.FROM_TIME.Name = "FROM_TIME";
+			// 
+			// TO_CODE
+			// 
+			this.TO_CODE.HeaderText = "To";
+			this.TO_CODE.MinimumWidth = 6;
+			this.TO_CODE.Name = "TO_CODE";
+			// 
+			// TO_TIME
+			// 
+			this.TO_TIME.HeaderText = "To Time";
+			this.TO_TIME.MinimumWidth = 6;
+			this.TO_TIME.Name = "TO_TIME";
+			// 
+			// PRICE
+			// 
+			this.PRICE.HeaderText = "Price";
+			this.PRICE.MinimumWidth = 6;
+			this.PRICE.Name = "PRICE";
+			// 
+			// STATUE
+			// 
+			this.STATUE.HeaderText = "Class";
+			this.STATUE.MinimumWidth = 6;
+			this.STATUE.Name = "STATUE";
+			// 
+			// PlaneNumber
+			// 
+			this.PlaneNumber.HeaderText = "Plane Number";
+			this.PlaneNumber.MinimumWidth = 6;
+			this.PlaneNumber.Name = "PlaneNumber";
+			// 
+			// dataGridViewButtonColumn4
+			// 
+			this.dataGridViewButtonColumn4.FillWeight = 42.46774F;
+			this.dataGridViewButtonColumn4.HeaderText = "❌";
+			this.dataGridViewButtonColumn4.MinimumWidth = 12;
+			this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+			this.dataGridViewButtonColumn4.Text = "❌";
+			this.dataGridViewButtonColumn4.ToolTipText = "Delete";
+			this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+			// 
+			// dataGridViewButtonColumn5
+			// 
+			this.dataGridViewButtonColumn5.FillWeight = 44.91978F;
+			this.dataGridViewButtonColumn5.HeaderText = "✏";
+			this.dataGridViewButtonColumn5.MinimumWidth = 12;
+			this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
+			this.dataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewButtonColumn5.Text = "✏";
+			this.dataGridViewButtonColumn5.ToolTipText = "Edit";
+			this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
 			// 
 			// groupBox8
 			// 
@@ -844,6 +898,18 @@
 			this.CB_From.Size = new System.Drawing.Size(121, 24);
 			this.CB_From.Sorted = true;
 			this.CB_From.TabIndex = 5;
+			// 
+			// CB_FligthPNum
+			// 
+			this.CB_FligthPNum.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.CB_FligthPNum.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+			this.CB_FligthPNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_FligthPNum.FormattingEnabled = true;
+			this.CB_FligthPNum.Location = new System.Drawing.Point(272, 86);
+			this.CB_FligthPNum.Name = "CB_FligthPNum";
+			this.CB_FligthPNum.Size = new System.Drawing.Size(121, 24);
+			this.CB_FligthPNum.Sorted = true;
+			this.CB_FligthPNum.TabIndex = 5;
 			// 
 			// CB_Sate
 			// 
@@ -933,6 +999,15 @@
 			this.label11.Size = new System.Drawing.Size(73, 17);
 			this.label11.TabIndex = 0;
 			this.label11.Text = "From Date";
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(166, 90);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(93, 17);
+			this.label16.TabIndex = 0;
+			this.label16.Text = "Plane Number";
 			// 
 			// label12
 			// 
@@ -1100,153 +1175,68 @@
 			this.dataGridViewButtonColumn7.ToolTipText = "Edit";
 			this.dataGridViewButtonColumn7.UseColumnTextForButtonValue = true;
 			// 
-			// label16
+			// PASSENGER_ID
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(166, 90);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(93, 17);
-			this.label16.TabIndex = 0;
-			this.label16.Text = "Plane Number";
+			this.PASSENGER_ID.HeaderText = "Passanger ID";
+			this.PASSENGER_ID.MinimumWidth = 6;
+			this.PASSENGER_ID.Name = "PASSENGER_ID";
+			this.PASSENGER_ID.ReadOnly = true;
+			this.PASSENGER_ID.Visible = false;
 			// 
-			// CB_FligthPNum
+			// PASSENGER_FNAME
 			// 
-			this.CB_FligthPNum.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.CB_FligthPNum.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-			this.CB_FligthPNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CB_FligthPNum.FormattingEnabled = true;
-			this.CB_FligthPNum.Location = new System.Drawing.Point(272, 86);
-			this.CB_FligthPNum.Name = "CB_FligthPNum";
-			this.CB_FligthPNum.Size = new System.Drawing.Size(121, 24);
-			this.CB_FligthPNum.Sorted = true;
-			this.CB_FligthPNum.TabIndex = 5;
+			this.PASSENGER_FNAME.FillWeight = 122.5225F;
+			this.PASSENGER_FNAME.HeaderText = "First Name";
+			this.PASSENGER_FNAME.MinimumWidth = 6;
+			this.PASSENGER_FNAME.Name = "PASSENGER_FNAME";
+			this.PASSENGER_FNAME.ReadOnly = true;
 			// 
-			// F_ID
+			// PASSENGER_LNAME
 			// 
-			this.F_ID.HeaderText = "ID";
-			this.F_ID.MinimumWidth = 6;
-			this.F_ID.Name = "F_ID";
-			this.F_ID.Visible = false;
+			this.PASSENGER_LNAME.FillWeight = 122.5225F;
+			this.PASSENGER_LNAME.HeaderText = "Last Name";
+			this.PASSENGER_LNAME.MinimumWidth = 6;
+			this.PASSENGER_LNAME.Name = "PASSENGER_LNAME";
+			this.PASSENGER_LNAME.ReadOnly = true;
 			// 
-			// FROM_CODE
+			// PASSENGER_EMAIL
 			// 
-			this.FROM_CODE.HeaderText = "From";
-			this.FROM_CODE.MinimumWidth = 6;
-			this.FROM_CODE.Name = "FROM_CODE";
+			this.PASSENGER_EMAIL.FillWeight = 122.5225F;
+			this.PASSENGER_EMAIL.HeaderText = "Email";
+			this.PASSENGER_EMAIL.MinimumWidth = 6;
+			this.PASSENGER_EMAIL.Name = "PASSENGER_EMAIL";
+			this.PASSENGER_EMAIL.ReadOnly = true;
 			// 
-			// FROM_TIME
+			// PASSENGER_PHONE
 			// 
-			this.FROM_TIME.HeaderText = "From Time";
-			this.FROM_TIME.MinimumWidth = 6;
-			this.FROM_TIME.Name = "FROM_TIME";
+			this.PASSENGER_PHONE.FillWeight = 122.5225F;
+			this.PASSENGER_PHONE.HeaderText = "Phone";
+			this.PASSENGER_PHONE.MinimumWidth = 6;
+			this.PASSENGER_PHONE.Name = "PASSENGER_PHONE";
+			this.PASSENGER_PHONE.ReadOnly = true;
 			// 
-			// TO_CODE
+			// Delete
 			// 
-			this.TO_CODE.HeaderText = "To";
-			this.TO_CODE.MinimumWidth = 6;
-			this.TO_CODE.Name = "TO_CODE";
+			this.Delete.FillWeight = 42.46774F;
+			this.Delete.HeaderText = "❌";
+			this.Delete.MinimumWidth = 12;
+			this.Delete.Name = "Delete";
+			this.Delete.ReadOnly = true;
+			this.Delete.Text = "❌";
+			this.Delete.ToolTipText = "Delete";
+			this.Delete.UseColumnTextForButtonValue = true;
 			// 
-			// TO_TIME
+			// View
 			// 
-			this.TO_TIME.HeaderText = "To Time";
-			this.TO_TIME.MinimumWidth = 6;
-			this.TO_TIME.Name = "TO_TIME";
-			// 
-			// PRICE
-			// 
-			this.PRICE.HeaderText = "Price";
-			this.PRICE.MinimumWidth = 6;
-			this.PRICE.Name = "PRICE";
-			// 
-			// STATUE
-			// 
-			this.STATUE.HeaderText = "Class";
-			this.STATUE.MinimumWidth = 6;
-			this.STATUE.Name = "STATUE";
-			// 
-			// PlaneNumber
-			// 
-			this.PlaneNumber.HeaderText = "Plane Number";
-			this.PlaneNumber.MinimumWidth = 6;
-			this.PlaneNumber.Name = "PlaneNumber";
-			// 
-			// dataGridViewButtonColumn4
-			// 
-			this.dataGridViewButtonColumn4.FillWeight = 42.46774F;
-			this.dataGridViewButtonColumn4.HeaderText = "❌";
-			this.dataGridViewButtonColumn4.MinimumWidth = 12;
-			this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-			this.dataGridViewButtonColumn4.Text = "❌";
-			this.dataGridViewButtonColumn4.ToolTipText = "Delete";
-			this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-			// 
-			// dataGridViewButtonColumn5
-			// 
-			this.dataGridViewButtonColumn5.FillWeight = 44.91978F;
-			this.dataGridViewButtonColumn5.HeaderText = "✏";
-			this.dataGridViewButtonColumn5.MinimumWidth = 12;
-			this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-			this.dataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.dataGridViewButtonColumn5.Text = "✏";
-			this.dataGridViewButtonColumn5.ToolTipText = "Edit";
-			this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-			this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.FillWeight = 93.36237F;
-			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			this.dataGridViewTextBoxColumn4.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this.dataGridViewTextBoxColumn5.FillWeight = 93.36237F;
-			this.dataGridViewTextBoxColumn5.HeaderText = "Number Of Sets";
-			this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			this.dataGridViewTextBoxColumn5.ReadOnly = true;
-			// 
-			// dataGridViewButtonColumn3
-			// 
-			this.dataGridViewButtonColumn3.FillWeight = 32.3605F;
-			this.dataGridViewButtonColumn3.HeaderText = "❌";
-			this.dataGridViewButtonColumn3.MinimumWidth = 12;
-			this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-			this.dataGridViewButtonColumn3.ReadOnly = true;
-			this.dataGridViewButtonColumn3.Text = "❌";
-			this.dataGridViewButtonColumn3.ToolTipText = "Delete";
-			this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-			// 
-			// Edit
-			// 
-			this.Edit.FillWeight = 32.3605F;
-			this.Edit.HeaderText = "✏";
-			this.Edit.MinimumWidth = 12;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.Edit.Text = "✏";
-			this.Edit.ToolTipText = "Edit";
-			this.Edit.UseColumnTextForButtonValue = true;
-			// 
-			// View_Fligths
-			// 
-			this.View_Fligths.FillWeight = 32.3605F;
-			this.View_Fligths.HeaderText = "👁‍🗨";
-			this.View_Fligths.MinimumWidth = 6;
-			this.View_Fligths.Name = "View_Fligths";
-			this.View_Fligths.ReadOnly = true;
-			this.View_Fligths.Text = "👁‍🗨";
-			this.View_Fligths.ToolTipText = "View Last Flight Time";
-			this.View_Fligths.UseColumnTextForButtonValue = true;
+			this.View.FillWeight = 44.91978F;
+			this.View.HeaderText = "👁‍🗨";
+			this.View.MinimumWidth = 12;
+			this.View.Name = "View";
+			this.View.ReadOnly = true;
+			this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.View.Text = "👁‍🗨";
+			this.View.ToolTipText = "View Password";
+			this.View.UseColumnTextForButtonValue = true;
 			// 
 			// FRM_Admin
 			// 
@@ -1309,14 +1299,6 @@
 		private System.Windows.Forms.Button BTN_SavePass;
 		private System.Windows.Forms.Button BTN_AddPass;
 		private System.Windows.Forms.DataGridView DGV_Pass;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_ID;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_FNAME;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_LNAME;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_EMAIL;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_PASSWORD;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_PHONE;
-		private System.Windows.Forms.DataGridViewButtonColumn Delete;
-		private System.Windows.Forms.DataGridViewButtonColumn View;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Button BTN_AddAir;
 		private System.Windows.Forms.TextBox TXT_AirCity;
@@ -1390,5 +1372,12 @@
 		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
 		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 		private System.Windows.Forms.DataGridViewButtonColumn View_Fligths;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_ID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_FNAME;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_LNAME;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_EMAIL;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PASSENGER_PHONE;
+		private System.Windows.Forms.DataGridViewButtonColumn Delete;
+		private System.Windows.Forms.DataGridViewButtonColumn View;
 	}
 }

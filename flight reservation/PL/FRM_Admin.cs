@@ -24,10 +24,10 @@ namespace flight_reservation.PL
 		{
 			try
 			{
-				OracleCommand cmd = new OracleCommand("select * from PASSENGER", DAL.Data.cn);
+				OracleCommand cmd = new OracleCommand("select PASSENGER_ID,PASSENGER_FNAME,PASSENGER_LNAME,PASSENGER_EMAIL,PASSENGER_PHONE from PASSENGER", DAL.Data.cn);
 				var x = cmd.ExecuteReader();
 				while (x.Read())
-					DGV_Pass.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2), x.GetValue(3), x.GetValue(4), x.GetValue(5));
+					DGV_Pass.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2), x.GetValue(3), x.GetValue(4));
 			}
 			catch (Exception dddd)
 			{
@@ -145,7 +145,7 @@ namespace flight_reservation.PL
 		{
 			if (e.RowIndex > -1)
 			{
-				if (e.ColumnIndex == 6)//Delete
+				if (e.ColumnIndex == 5)//Delete
 				{
 					if (MessageBox.Show("Are You Want to Remove this Passanger And His History?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 					{
@@ -165,9 +165,20 @@ namespace flight_reservation.PL
 						}
 					}
 				}
-				else if (e.ColumnIndex == 7)//View Flights
+				else if (e.ColumnIndex == 6)//View Password
 				{
-
+					try
+					{
+						OracleCommand cmd = new OracleCommand("select PASSENGER_PASSWORD from PASSENGER where PASSENGER_ID=:id", DAL.Data.cn);
+						cmd.Parameters.Add("id", DGV_Pass.Rows[e.RowIndex].Cells[0].Value);
+						var x = cmd.ExecuteReader();
+						x.Read();
+						MessageBox.Show($"Password Is: '{x.GetString(0)}'");
+					}
+					catch (Exception dddd)
+					{
+						MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			}
 		}
