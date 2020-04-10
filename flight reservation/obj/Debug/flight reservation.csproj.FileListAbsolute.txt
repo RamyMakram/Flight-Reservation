@@ -43,14 +43,8 @@ C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\bin\Debug\fli
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.csprojAssemblyReference.cache
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.cancel.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.Form3.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.Form4.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.Form7.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.Properties.Resources.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.review.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.register.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.UserControl2.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.UserControl3.resources
-C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.UserControl4.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.csproj.GenerateResource.cache
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.exe
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.pdb
@@ -59,3 +53,7 @@ C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\fli
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.FRM_Login.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.FRM_Start.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.FRM_Register.resources
+C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.FRM_Reservations.resources
+C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.csproj.CopyComplete
+C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.PL.FRM_Admin.resources

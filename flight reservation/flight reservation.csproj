@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ORCAL\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -45,117 +49,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FRM_Book.cs">
+    <Compile Include="DAL\Data.cs" />
+    <Compile Include="PL\FRM_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Book.Designer.cs">
+    <Compile Include="PL\FRM_Admin.Designer.cs">
+      <DependentUpon>FRM_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Book.Designer.cs">
       <DependentUpon>FRM_Book.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Cancel-Rerservation.cs">
+    <Compile Include="PL\FRM_Cancel-Rerservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Cancel-Rerservation.Designer.cs">
+    <Compile Include="PL\FRM_Cancel-Rerservation.Designer.cs">
       <DependentUpon>FRM_Cancel-Rerservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Home.cs">
+    <Compile Include="PL\FRM_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Home.Designer.cs">
+    <Compile Include="PL\FRM_Home.Designer.cs">
       <DependentUpon>FRM_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Login.cs">
+    <Compile Include="PL\FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Login.Designer.cs">
+    <Compile Include="PL\FRM_Login.Designer.cs">
       <DependentUpon>FRM_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Check-Reserv.cs">
+    <Compile Include="PL\FRM_Check-Reserv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Check-Reserv.Designer.cs">
+    <Compile Include="PL\FRM_Check-Reserv.Designer.cs">
       <DependentUpon>FRM_Check-Reserv.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Reservations.cs">
+    <Compile Include="PL\FRM_Reservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Reservations.Designer.cs">
+    <Compile Include="PL\FRM_Reservations.Designer.cs">
       <DependentUpon>FRM_Reservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Start.cs">
+    <Compile Include="PL\FRM_Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Start.Designer.cs">
+    <Compile Include="PL\FRM_Start.Designer.cs">
       <DependentUpon>FRM_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_Register.cs">
+    <Compile Include="PL\FRM_Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM_Register.Designer.cs">
+    <Compile Include="PL\FRM_Register.Designer.cs">
       <DependentUpon>FRM_Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Contact-Us.cs">
+    <Compile Include="PL\Contact-Us.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contact-Us.Designer.cs">
+    <Compile Include="PL\Contact-Us.Designer.cs">
       <DependentUpon>Contact-Us.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="review.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="review.Designer.cs">
-      <DependentUpon>review.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl3.Designer.cs">
-      <DependentUpon>UserControl3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl4.Designer.cs">
-      <DependentUpon>UserControl4.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FRM_Book.resx">
+    <EmbeddedResource Include="PL\FRM_Admin.resx">
+      <DependentUpon>FRM_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Book.resx">
       <DependentUpon>FRM_Book.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Cancel-Rerservation.resx">
+    <EmbeddedResource Include="PL\FRM_Cancel-Rerservation.resx">
       <DependentUpon>FRM_Cancel-Rerservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Home.resx">
+    <EmbeddedResource Include="PL\FRM_Home.resx">
       <DependentUpon>FRM_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Login.resx">
+    <EmbeddedResource Include="PL\FRM_Login.resx">
       <DependentUpon>FRM_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Check-Reserv.resx">
+    <EmbeddedResource Include="PL\FRM_Check-Reserv.resx">
       <DependentUpon>FRM_Check-Reserv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Reservations.resx">
+    <EmbeddedResource Include="PL\FRM_Reservations.resx">
       <DependentUpon>FRM_Reservations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Start.resx">
+    <EmbeddedResource Include="PL\FRM_Start.resx">
       <DependentUpon>FRM_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_Register.resx">
+    <EmbeddedResource Include="PL\FRM_Register.resx">
       <DependentUpon>FRM_Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contact-Us.resx">
+    <EmbeddedResource Include="PL\Contact-Us.resx">
       <DependentUpon>Contact-Us.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -167,21 +151,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="review.resx">
-      <DependentUpon>review.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl3.resx">
-      <DependentUpon>UserControl3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl4.resx">
-      <DependentUpon>UserControl4.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
