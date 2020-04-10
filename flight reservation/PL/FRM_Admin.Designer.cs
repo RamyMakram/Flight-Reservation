@@ -13,11 +13,14 @@
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
-			if (disposing && (components != null))
+			if (System.Windows.Forms.MessageBox.Show("Are You Want To Close Program?😢😢", "Confirm", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
 			{
-				components.Dispose();
+				if (disposing && (components != null))
+				{
+					components.Dispose();
+				}
+				base.Dispose(disposing);
 			}
-			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -28,14 +31,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.BTN_AddPass = new System.Windows.Forms.Button();
 			this.TXT_Phone = new System.Windows.Forms.TextBox();
@@ -78,15 +83,12 @@
 			this.TXT_PlaneSets = new System.Windows.Forms.NumericUpDown();
 			this.BTN_AddPlane = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
+			this.TXT_PlaneID = new System.Windows.Forms.TextBox();
 			this.TXT_PlaneName = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
+			this.BTN_SavePlane = new System.Windows.Forms.Button();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.DGV_Planes = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.DGV_Flights = new System.Windows.Forms.DataGridView();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -94,6 +96,7 @@
 			this.CB_From = new System.Windows.Forms.ComboBox();
 			this.CB_Sate = new System.Windows.Forms.ComboBox();
 			this.CB_To = new System.Windows.Forms.ComboBox();
+			this.TXT_FligthID = new System.Windows.Forms.TextBox();
 			this.D_FlightFrom = new System.Windows.Forms.DateTimePicker();
 			this.D_FlightTo = new System.Windows.Forms.DateTimePicker();
 			this.BTN_AddFligth = new System.Windows.Forms.Button();
@@ -103,6 +106,21 @@
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
+			this.BTN_SaveFlight = new System.Windows.Forms.Button();
+			this.Save_Admin = new System.Windows.Forms.Button();
+			this.groupBox9 = new System.Windows.Forms.GroupBox();
+			this.DGV_Admin = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.label16 = new System.Windows.Forms.Label();
+			this.CB_FligthPNum = new System.Windows.Forms.ComboBox();
 			this.F_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FROM_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FROM_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,9 +128,15 @@
 			this.TO_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.STATUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PlaneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.CB_Test = new System.Windows.Forms.ComboBox();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.View_Fligths = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.DGV_Pass)).BeginInit();
@@ -127,6 +151,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.DGV_Flights)).BeginInit();
 			this.groupBox8.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.TXT_FlightPrice)).BeginInit();
+			this.groupBox9.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.DGV_Admin)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -146,14 +172,14 @@
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(762, 158);
+			this.groupBox1.Size = new System.Drawing.Size(774, 158);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Passengers";
 			// 
 			// BTN_AddPass
 			// 
-			this.BTN_AddPass.Location = new System.Drawing.Point(339, 117);
+			this.BTN_AddPass.Location = new System.Drawing.Point(354, 117);
 			this.BTN_AddPass.Name = "BTN_AddPass";
 			this.BTN_AddPass.Size = new System.Drawing.Size(75, 23);
 			this.BTN_AddPass.TabIndex = 2;
@@ -163,7 +189,7 @@
 			// 
 			// TXT_Phone
 			// 
-			this.TXT_Phone.Location = new System.Drawing.Point(425, 70);
+			this.TXT_Phone.Location = new System.Drawing.Point(459, 70);
 			this.TXT_Phone.Name = "TXT_Phone";
 			this.TXT_Phone.Size = new System.Drawing.Size(156, 24);
 			this.TXT_Phone.TabIndex = 1;
@@ -171,7 +197,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(377, 74);
+			this.label6.Location = new System.Drawing.Point(411, 74);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(47, 17);
 			this.label6.TabIndex = 0;
@@ -179,7 +205,7 @@
 			// 
 			// TXT_Pass
 			// 
-			this.TXT_Pass.Location = new System.Drawing.Point(191, 70);
+			this.TXT_Pass.Location = new System.Drawing.Point(225, 70);
 			this.TXT_Pass.Name = "TXT_Pass";
 			this.TXT_Pass.Size = new System.Drawing.Size(156, 24);
 			this.TXT_Pass.TabIndex = 1;
@@ -187,7 +213,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(143, 74);
+			this.label5.Location = new System.Drawing.Point(177, 74);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(35, 17);
 			this.label5.TabIndex = 0;
@@ -195,7 +221,7 @@
 			// 
 			// TXT_Mail
 			// 
-			this.TXT_Mail.Location = new System.Drawing.Point(532, 32);
+			this.TXT_Mail.Location = new System.Drawing.Point(566, 32);
 			this.TXT_Mail.Name = "TXT_Mail";
 			this.TXT_Mail.Size = new System.Drawing.Size(156, 24);
 			this.TXT_Mail.TabIndex = 1;
@@ -203,7 +229,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(484, 36);
+			this.label4.Location = new System.Drawing.Point(518, 36);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(29, 17);
 			this.label4.TabIndex = 0;
@@ -211,7 +237,7 @@
 			// 
 			// TXT_LName
 			// 
-			this.TXT_LName.Location = new System.Drawing.Point(295, 32);
+			this.TXT_LName.Location = new System.Drawing.Point(329, 32);
 			this.TXT_LName.Name = "TXT_LName";
 			this.TXT_LName.Size = new System.Drawing.Size(156, 24);
 			this.TXT_LName.TabIndex = 1;
@@ -219,7 +245,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(240, 36);
+			this.label3.Location = new System.Drawing.Point(274, 36);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(54, 17);
 			this.label3.TabIndex = 0;
@@ -227,7 +253,7 @@
 			// 
 			// TXT_FName
 			// 
-			this.TXT_FName.Location = new System.Drawing.Point(69, 32);
+			this.TXT_FName.Location = new System.Drawing.Point(103, 32);
 			this.TXT_FName.Name = "TXT_FName";
 			this.TXT_FName.Size = new System.Drawing.Size(156, 24);
 			this.TXT_FName.TabIndex = 1;
@@ -235,7 +261,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 36);
+			this.label1.Location = new System.Drawing.Point(40, 36);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(54, 17);
 			this.label1.TabIndex = 0;
@@ -243,7 +269,7 @@
 			// 
 			// BTN_SavePass
 			// 
-			this.BTN_SavePass.Location = new System.Drawing.Point(339, 117);
+			this.BTN_SavePass.Location = new System.Drawing.Point(354, 117);
 			this.BTN_SavePass.Name = "BTN_SavePass";
 			this.BTN_SavePass.Size = new System.Drawing.Size(75, 23);
 			this.BTN_SavePass.TabIndex = 2;
@@ -258,7 +284,7 @@
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox2.Location = new System.Drawing.Point(0, 158);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(762, 232);
+			this.groupBox2.Size = new System.Drawing.Size(774, 232);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Passengers";
@@ -269,14 +295,14 @@
 			this.DGV_Pass.AllowUserToOrderColumns = true;
 			this.DGV_Pass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Pass.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Pass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Pass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.DGV_Pass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Pass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PASSENGER_ID,
@@ -287,14 +313,14 @@
             this.PASSENGER_PHONE,
             this.Delete,
             this.View});
-			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Pass.DefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Pass.DefaultCellStyle = dataGridViewCellStyle2;
 			this.DGV_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Pass.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Pass.Location = new System.Drawing.Point(3, 20);
@@ -302,7 +328,7 @@
 			this.DGV_Pass.Name = "DGV_Pass";
 			this.DGV_Pass.ReadOnly = true;
 			this.DGV_Pass.RowHeadersWidth = 51;
-			this.DGV_Pass.Size = new System.Drawing.Size(756, 209);
+			this.DGV_Pass.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Pass.TabIndex = 1;
 			this.DGV_Pass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pass_CellClick);
 			// 
@@ -389,14 +415,14 @@
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox3.Location = new System.Drawing.Point(0, 390);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(762, 137);
+			this.groupBox3.Size = new System.Drawing.Size(774, 137);
 			this.groupBox3.TabIndex = 3;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Airport";
 			// 
 			// BTN_AddAir
 			// 
-			this.BTN_AddAir.Location = new System.Drawing.Point(324, 97);
+			this.BTN_AddAir.Location = new System.Drawing.Point(362, 95);
 			this.BTN_AddAir.Name = "BTN_AddAir";
 			this.BTN_AddAir.Size = new System.Drawing.Size(75, 23);
 			this.BTN_AddAir.TabIndex = 2;
@@ -406,7 +432,7 @@
 			// 
 			// TXT_AirCity
 			// 
-			this.TXT_AirCity.Location = new System.Drawing.Point(413, 48);
+			this.TXT_AirCity.Location = new System.Drawing.Point(451, 46);
 			this.TXT_AirCity.Name = "TXT_AirCity";
 			this.TXT_AirCity.Size = new System.Drawing.Size(156, 24);
 			this.TXT_AirCity.TabIndex = 1;
@@ -414,7 +440,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(378, 52);
+			this.label9.Location = new System.Drawing.Point(416, 50);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(32, 17);
 			this.label9.TabIndex = 0;
@@ -424,13 +450,13 @@
 			// 
 			this.TXT_AirID.Location = new System.Drawing.Point(58, 78);
 			this.TXT_AirID.Name = "TXT_AirID";
-			this.TXT_AirID.Size = new System.Drawing.Size(156, 24);
+			this.TXT_AirID.Size = new System.Drawing.Size(15, 24);
 			this.TXT_AirID.TabIndex = 1;
 			this.TXT_AirID.Visible = false;
 			// 
 			// TXT_AirName
 			// 
-			this.TXT_AirName.Location = new System.Drawing.Point(187, 48);
+			this.TXT_AirName.Location = new System.Drawing.Point(225, 46);
 			this.TXT_AirName.Name = "TXT_AirName";
 			this.TXT_AirName.Size = new System.Drawing.Size(156, 24);
 			this.TXT_AirName.TabIndex = 1;
@@ -438,7 +464,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(124, 52);
+			this.label10.Location = new System.Drawing.Point(162, 50);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(43, 17);
 			this.label10.TabIndex = 0;
@@ -446,7 +472,7 @@
 			// 
 			// BTN_SaveAir
 			// 
-			this.BTN_SaveAir.Location = new System.Drawing.Point(324, 97);
+			this.BTN_SaveAir.Location = new System.Drawing.Point(362, 95);
 			this.BTN_SaveAir.Name = "BTN_SaveAir";
 			this.BTN_SaveAir.Size = new System.Drawing.Size(75, 23);
 			this.BTN_SaveAir.TabIndex = 2;
@@ -461,7 +487,7 @@
 			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox4.Location = new System.Drawing.Point(0, 527);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(762, 232);
+			this.groupBox4.Size = new System.Drawing.Size(774, 232);
 			this.groupBox4.TabIndex = 4;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "AirPorts";
@@ -472,14 +498,14 @@
 			this.DGV_AirPort.AllowUserToOrderColumns = true;
 			this.DGV_AirPort.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_AirPort.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle11.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_AirPort.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_AirPort.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.DGV_AirPort.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_AirPort.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -487,14 +513,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
-			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle12.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_AirPort.DefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_AirPort.DefaultCellStyle = dataGridViewCellStyle4;
 			this.DGV_AirPort.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_AirPort.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_AirPort.Location = new System.Drawing.Point(3, 20);
@@ -502,7 +528,7 @@
 			this.DGV_AirPort.Name = "DGV_AirPort";
 			this.DGV_AirPort.ReadOnly = true;
 			this.DGV_AirPort.RowHeadersWidth = 51;
-			this.DGV_AirPort.Size = new System.Drawing.Size(756, 209);
+			this.DGV_AirPort.Size = new System.Drawing.Size(768, 209);
 			this.DGV_AirPort.TabIndex = 1;
 			this.DGV_AirPort.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_AirPort_CellClick);
 			// 
@@ -556,16 +582,16 @@
 			// groupBox5
 			// 
 			this.groupBox5.Controls.Add(this.TXT_PlaneSets);
-			this.groupBox5.Controls.Add(this.CB_Test);
 			this.groupBox5.Controls.Add(this.BTN_AddPlane);
 			this.groupBox5.Controls.Add(this.label2);
+			this.groupBox5.Controls.Add(this.TXT_PlaneID);
 			this.groupBox5.Controls.Add(this.TXT_PlaneName);
 			this.groupBox5.Controls.Add(this.label7);
-			this.groupBox5.Controls.Add(this.button2);
+			this.groupBox5.Controls.Add(this.BTN_SavePlane);
 			this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox5.Location = new System.Drawing.Point(0, 759);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(762, 137);
+			this.groupBox5.Size = new System.Drawing.Size(774, 137);
 			this.groupBox5.TabIndex = 5;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "AirPlane";
@@ -594,7 +620,7 @@
 			// 
 			// BTN_AddPlane
 			// 
-			this.BTN_AddPlane.Location = new System.Drawing.Point(324, 97);
+			this.BTN_AddPlane.Location = new System.Drawing.Point(324, 96);
 			this.BTN_AddPlane.Name = "BTN_AddPlane";
 			this.BTN_AddPlane.Size = new System.Drawing.Size(75, 23);
 			this.BTN_AddPlane.TabIndex = 2;
@@ -610,6 +636,14 @@
 			this.label2.Size = new System.Drawing.Size(107, 17);
 			this.label2.TabIndex = 0;
 			this.label2.Text = "Number Os Sets";
+			// 
+			// TXT_PlaneID
+			// 
+			this.TXT_PlaneID.Location = new System.Drawing.Point(138, 96);
+			this.TXT_PlaneID.Name = "TXT_PlaneID";
+			this.TXT_PlaneID.Size = new System.Drawing.Size(13, 24);
+			this.TXT_PlaneID.TabIndex = 1;
+			this.TXT_PlaneID.Visible = false;
 			// 
 			// TXT_PlaneName
 			// 
@@ -627,15 +661,16 @@
 			this.label7.TabIndex = 0;
 			this.label7.Text = "Name";
 			// 
-			// button2
+			// BTN_SavePlane
 			// 
-			this.button2.Location = new System.Drawing.Point(324, 97);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "Save";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Visible = false;
+			this.BTN_SavePlane.Location = new System.Drawing.Point(324, 97);
+			this.BTN_SavePlane.Name = "BTN_SavePlane";
+			this.BTN_SavePlane.Size = new System.Drawing.Size(75, 23);
+			this.BTN_SavePlane.TabIndex = 2;
+			this.BTN_SavePlane.Text = "Save";
+			this.BTN_SavePlane.UseVisualStyleBackColor = true;
+			this.BTN_SavePlane.Visible = false;
+			this.BTN_SavePlane.Click += new System.EventHandler(this.BTN_SavePlane_Click);
 			// 
 			// groupBox6
 			// 
@@ -643,7 +678,7 @@
 			this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox6.Location = new System.Drawing.Point(0, 896);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(762, 232);
+			this.groupBox6.Size = new System.Drawing.Size(774, 232);
 			this.groupBox6.TabIndex = 6;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Planes";
@@ -654,28 +689,30 @@
 			this.DGV_Planes.AllowUserToOrderColumns = true;
 			this.DGV_Planes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Planes.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle13.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Planes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Planes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.DGV_Planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Planes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewButtonColumn3});
-			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Planes.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewButtonColumn3,
+            this.Edit,
+            this.View_Fligths});
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Planes.DefaultCellStyle = dataGridViewCellStyle6;
 			this.DGV_Planes.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Planes.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Planes.Location = new System.Drawing.Point(3, 20);
@@ -683,52 +720,17 @@
 			this.DGV_Planes.Name = "DGV_Planes";
 			this.DGV_Planes.ReadOnly = true;
 			this.DGV_Planes.RowHeadersWidth = 51;
-			this.DGV_Planes.Size = new System.Drawing.Size(756, 209);
+			this.DGV_Planes.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Planes.TabIndex = 1;
 			this.DGV_Planes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Planes_CellClick);
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-			this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			this.dataGridViewTextBoxColumn1.Visible = false;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.FillWeight = 122.5225F;
-			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-			this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			this.dataGridViewTextBoxColumn4.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this.dataGridViewTextBoxColumn5.FillWeight = 122.5225F;
-			this.dataGridViewTextBoxColumn5.HeaderText = "Number Of Sets";
-			this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			this.dataGridViewTextBoxColumn5.ReadOnly = true;
-			// 
-			// dataGridViewButtonColumn3
-			// 
-			this.dataGridViewButtonColumn3.FillWeight = 42.46774F;
-			this.dataGridViewButtonColumn3.HeaderText = "❌";
-			this.dataGridViewButtonColumn3.MinimumWidth = 12;
-			this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-			this.dataGridViewButtonColumn3.ReadOnly = true;
-			this.dataGridViewButtonColumn3.Text = "❌";
-			this.dataGridViewButtonColumn3.ToolTipText = "Delete";
-			this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
 			// 
 			// groupBox7
 			// 
 			this.groupBox7.Controls.Add(this.DGV_Flights);
 			this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
-			this.groupBox7.Location = new System.Drawing.Point(0, 1286);
+			this.groupBox7.Location = new System.Drawing.Point(0, 1349);
 			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(762, 232);
+			this.groupBox7.Size = new System.Drawing.Size(774, 232);
 			this.groupBox7.TabIndex = 8;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Flights";
@@ -739,14 +741,14 @@
 			this.DGV_Flights.AllowUserToOrderColumns = true;
 			this.DGV_Flights.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Flights.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle15.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Flights.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Flights.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.DGV_Flights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Flights.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.F_ID,
@@ -756,24 +758,24 @@
             this.TO_TIME,
             this.PRICE,
             this.STATUE,
+            this.PlaneNumber,
             this.dataGridViewButtonColumn4,
             this.dataGridViewButtonColumn5});
-			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Flights.DefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Flights.DefaultCellStyle = dataGridViewCellStyle8;
 			this.DGV_Flights.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Flights.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Flights.Location = new System.Drawing.Point(3, 20);
 			this.DGV_Flights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.DGV_Flights.Name = "DGV_Flights";
-			this.DGV_Flights.ReadOnly = true;
 			this.DGV_Flights.RowHeadersWidth = 51;
-			this.DGV_Flights.Size = new System.Drawing.Size(756, 209);
+			this.DGV_Flights.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Flights.TabIndex = 1;
 			this.DGV_Flights.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Flights_CellClick);
 			// 
@@ -781,21 +783,25 @@
 			// 
 			this.groupBox8.Controls.Add(this.TXT_FlightPrice);
 			this.groupBox8.Controls.Add(this.CB_From);
+			this.groupBox8.Controls.Add(this.CB_FligthPNum);
 			this.groupBox8.Controls.Add(this.CB_Sate);
 			this.groupBox8.Controls.Add(this.CB_To);
+			this.groupBox8.Controls.Add(this.TXT_FligthID);
 			this.groupBox8.Controls.Add(this.D_FlightFrom);
 			this.groupBox8.Controls.Add(this.D_FlightTo);
 			this.groupBox8.Controls.Add(this.BTN_AddFligth);
 			this.groupBox8.Controls.Add(this.label8);
 			this.groupBox8.Controls.Add(this.label15);
 			this.groupBox8.Controls.Add(this.label11);
+			this.groupBox8.Controls.Add(this.label16);
 			this.groupBox8.Controls.Add(this.label12);
 			this.groupBox8.Controls.Add(this.label13);
 			this.groupBox8.Controls.Add(this.label14);
+			this.groupBox8.Controls.Add(this.BTN_SaveFlight);
 			this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox8.Location = new System.Drawing.Point(0, 1128);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(762, 158);
+			this.groupBox8.Size = new System.Drawing.Size(774, 221);
 			this.groupBox8.TabIndex = 7;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Flight";
@@ -807,7 +813,7 @@
             0,
             0,
             0});
-			this.TXT_FlightPrice.Location = new System.Drawing.Point(622, 78);
+			this.TXT_FlightPrice.Location = new System.Drawing.Point(476, 86);
 			this.TXT_FlightPrice.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -833,7 +839,7 @@
 			this.CB_From.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.CB_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.CB_From.FormattingEnabled = true;
-			this.CB_From.Location = new System.Drawing.Point(126, 36);
+			this.CB_From.Location = new System.Drawing.Point(175, 37);
 			this.CB_From.Name = "CB_From";
 			this.CB_From.Size = new System.Drawing.Size(121, 24);
 			this.CB_From.Sorted = true;
@@ -851,7 +857,7 @@
             "Economy",
             "High",
             "VIP"});
-			this.CB_Sate.Location = new System.Drawing.Point(564, 36);
+			this.CB_Sate.Location = new System.Drawing.Point(577, 37);
 			this.CB_Sate.Name = "CB_Sate";
 			this.CB_Sate.Size = new System.Drawing.Size(121, 24);
 			this.CB_Sate.Sorted = true;
@@ -863,29 +869,37 @@
 			this.CB_To.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.CB_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.CB_To.FormattingEnabled = true;
-			this.CB_To.Location = new System.Drawing.Point(333, 36);
+			this.CB_To.Location = new System.Drawing.Point(364, 37);
 			this.CB_To.Name = "CB_To";
 			this.CB_To.Size = new System.Drawing.Size(121, 24);
 			this.CB_To.Sorted = true;
 			this.CB_To.TabIndex = 5;
 			// 
+			// TXT_FligthID
+			// 
+			this.TXT_FligthID.Location = new System.Drawing.Point(91, 178);
+			this.TXT_FligthID.Name = "TXT_FligthID";
+			this.TXT_FligthID.Size = new System.Drawing.Size(17, 24);
+			this.TXT_FligthID.TabIndex = 1;
+			this.TXT_FligthID.Visible = false;
+			// 
 			// D_FlightFrom
 			// 
-			this.D_FlightFrom.Location = new System.Drawing.Point(103, 78);
+			this.D_FlightFrom.Location = new System.Drawing.Point(156, 132);
 			this.D_FlightFrom.Name = "D_FlightFrom";
-			this.D_FlightFrom.Size = new System.Drawing.Size(187, 24);
+			this.D_FlightFrom.Size = new System.Drawing.Size(237, 24);
 			this.D_FlightFrom.TabIndex = 3;
 			// 
 			// D_FlightTo
 			// 
-			this.D_FlightTo.Location = new System.Drawing.Point(380, 78);
+			this.D_FlightTo.Location = new System.Drawing.Point(490, 132);
 			this.D_FlightTo.Name = "D_FlightTo";
-			this.D_FlightTo.Size = new System.Drawing.Size(188, 24);
+			this.D_FlightTo.Size = new System.Drawing.Size(243, 24);
 			this.D_FlightTo.TabIndex = 3;
 			// 
 			// BTN_AddFligth
 			// 
-			this.BTN_AddFligth.Location = new System.Drawing.Point(339, 117);
+			this.BTN_AddFligth.Location = new System.Drawing.Point(333, 179);
 			this.BTN_AddFligth.Name = "BTN_AddFligth";
 			this.BTN_AddFligth.Size = new System.Drawing.Size(75, 23);
 			this.BTN_AddFligth.TabIndex = 2;
@@ -896,7 +910,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(312, 82);
+			this.label8.Location = new System.Drawing.Point(422, 136);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(57, 17);
 			this.label8.TabIndex = 0;
@@ -905,7 +919,7 @@
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(579, 82);
+			this.label15.Location = new System.Drawing.Point(416, 90);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(37, 17);
 			this.label15.TabIndex = 0;
@@ -914,7 +928,7 @@
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(19, 82);
+			this.label11.Location = new System.Drawing.Point(72, 136);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(73, 17);
 			this.label11.TabIndex = 0;
@@ -923,7 +937,7 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(485, 40);
+			this.label12.Location = new System.Drawing.Point(507, 41);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(48, 17);
 			this.label12.TabIndex = 0;
@@ -932,7 +946,7 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(278, 40);
+			this.label13.Location = new System.Drawing.Point(318, 41);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(24, 17);
 			this.label13.TabIndex = 0;
@@ -941,18 +955,177 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(55, 40);
+			this.label14.Location = new System.Drawing.Point(113, 41);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(40, 17);
 			this.label14.TabIndex = 0;
 			this.label14.Text = "From";
+			// 
+			// BTN_SaveFlight
+			// 
+			this.BTN_SaveFlight.Location = new System.Drawing.Point(333, 179);
+			this.BTN_SaveFlight.Name = "BTN_SaveFlight";
+			this.BTN_SaveFlight.Size = new System.Drawing.Size(75, 23);
+			this.BTN_SaveFlight.TabIndex = 2;
+			this.BTN_SaveFlight.Text = "Save";
+			this.BTN_SaveFlight.UseVisualStyleBackColor = true;
+			this.BTN_SaveFlight.Visible = false;
+			this.BTN_SaveFlight.Click += new System.EventHandler(this.BTN_SaveFlight_Click);
+			// 
+			// Save_Admin
+			// 
+			this.Save_Admin.Location = new System.Drawing.Point(273, 23);
+			this.Save_Admin.Name = "Save_Admin";
+			this.Save_Admin.Size = new System.Drawing.Size(212, 23);
+			this.Save_Admin.TabIndex = 2;
+			this.Save_Admin.Text = "Save";
+			this.Save_Admin.UseVisualStyleBackColor = true;
+			this.Save_Admin.Click += new System.EventHandler(this.SaveTemp_Click);
+			// 
+			// groupBox9
+			// 
+			this.groupBox9.Controls.Add(this.DGV_Admin);
+			this.groupBox9.Controls.Add(this.Save_Admin);
+			this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
+			this.groupBox9.Location = new System.Drawing.Point(0, 1581);
+			this.groupBox9.Name = "groupBox9";
+			this.groupBox9.Size = new System.Drawing.Size(774, 318);
+			this.groupBox9.TabIndex = 9;
+			this.groupBox9.TabStop = false;
+			this.groupBox9.Text = "Admin";
+			// 
+			// DGV_Admin
+			// 
+			this.DGV_Admin.AllowUserToOrderColumns = true;
+			this.DGV_Admin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.DGV_Admin.BackgroundColor = System.Drawing.Color.White;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Admin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			this.DGV_Admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DGV_Admin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewButtonColumn6,
+            this.dataGridViewButtonColumn7});
+			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Admin.DefaultCellStyle = dataGridViewCellStyle10;
+			this.DGV_Admin.GridColor = System.Drawing.Color.Turquoise;
+			this.DGV_Admin.Location = new System.Drawing.Point(3, 64);
+			this.DGV_Admin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.DGV_Admin.Name = "DGV_Admin";
+			this.DGV_Admin.RowHeadersWidth = 51;
+			this.DGV_Admin.Size = new System.Drawing.Size(758, 247);
+			this.DGV_Admin.TabIndex = 1;
+			this.DGV_Admin.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DGV_Admin_RowsAdded);
+			this.DGV_Admin.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.DGV_Admin_UserAddedRow);
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.HeaderText = "ID";
+			this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dataGridViewTextBoxColumn6.Visible = false;
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this.dataGridViewTextBoxColumn7.HeaderText = "From";
+			this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this.dataGridViewTextBoxColumn8.HeaderText = "From Time";
+			this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this.dataGridViewTextBoxColumn9.HeaderText = "To";
+			this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+			// 
+			// dataGridViewTextBoxColumn10
+			// 
+			this.dataGridViewTextBoxColumn10.HeaderText = "To Time";
+			this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+			// 
+			// dataGridViewTextBoxColumn11
+			// 
+			this.dataGridViewTextBoxColumn11.HeaderText = "Price";
+			this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+			// 
+			// dataGridViewTextBoxColumn12
+			// 
+			this.dataGridViewTextBoxColumn12.HeaderText = "Class";
+			this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+			// 
+			// dataGridViewButtonColumn6
+			// 
+			this.dataGridViewButtonColumn6.FillWeight = 42.46774F;
+			this.dataGridViewButtonColumn6.HeaderText = "❌";
+			this.dataGridViewButtonColumn6.MinimumWidth = 12;
+			this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
+			this.dataGridViewButtonColumn6.Text = "❌";
+			this.dataGridViewButtonColumn6.ToolTipText = "Delete";
+			this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
+			// 
+			// dataGridViewButtonColumn7
+			// 
+			this.dataGridViewButtonColumn7.FillWeight = 44.91978F;
+			this.dataGridViewButtonColumn7.HeaderText = "✏";
+			this.dataGridViewButtonColumn7.MinimumWidth = 12;
+			this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
+			this.dataGridViewButtonColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewButtonColumn7.Text = "✏";
+			this.dataGridViewButtonColumn7.ToolTipText = "Edit";
+			this.dataGridViewButtonColumn7.UseColumnTextForButtonValue = true;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(166, 90);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(93, 17);
+			this.label16.TabIndex = 0;
+			this.label16.Text = "Plane Number";
+			// 
+			// CB_FligthPNum
+			// 
+			this.CB_FligthPNum.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.CB_FligthPNum.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+			this.CB_FligthPNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_FligthPNum.FormattingEnabled = true;
+			this.CB_FligthPNum.Location = new System.Drawing.Point(272, 86);
+			this.CB_FligthPNum.Name = "CB_FligthPNum";
+			this.CB_FligthPNum.Size = new System.Drawing.Size(121, 24);
+			this.CB_FligthPNum.Sorted = true;
+			this.CB_FligthPNum.TabIndex = 5;
 			// 
 			// F_ID
 			// 
 			this.F_ID.HeaderText = "ID";
 			this.F_ID.MinimumWidth = 6;
 			this.F_ID.Name = "F_ID";
-			this.F_ID.ReadOnly = true;
 			this.F_ID.Visible = false;
 			// 
 			// FROM_CODE
@@ -960,42 +1133,42 @@
 			this.FROM_CODE.HeaderText = "From";
 			this.FROM_CODE.MinimumWidth = 6;
 			this.FROM_CODE.Name = "FROM_CODE";
-			this.FROM_CODE.ReadOnly = true;
 			// 
 			// FROM_TIME
 			// 
 			this.FROM_TIME.HeaderText = "From Time";
 			this.FROM_TIME.MinimumWidth = 6;
 			this.FROM_TIME.Name = "FROM_TIME";
-			this.FROM_TIME.ReadOnly = true;
 			// 
 			// TO_CODE
 			// 
 			this.TO_CODE.HeaderText = "To";
 			this.TO_CODE.MinimumWidth = 6;
 			this.TO_CODE.Name = "TO_CODE";
-			this.TO_CODE.ReadOnly = true;
 			// 
 			// TO_TIME
 			// 
 			this.TO_TIME.HeaderText = "To Time";
 			this.TO_TIME.MinimumWidth = 6;
 			this.TO_TIME.Name = "TO_TIME";
-			this.TO_TIME.ReadOnly = true;
 			// 
 			// PRICE
 			// 
 			this.PRICE.HeaderText = "Price";
 			this.PRICE.MinimumWidth = 6;
 			this.PRICE.Name = "PRICE";
-			this.PRICE.ReadOnly = true;
 			// 
 			// STATUE
 			// 
 			this.STATUE.HeaderText = "Class";
 			this.STATUE.MinimumWidth = 6;
 			this.STATUE.Name = "STATUE";
-			this.STATUE.ReadOnly = true;
+			// 
+			// PlaneNumber
+			// 
+			this.PlaneNumber.HeaderText = "Plane Number";
+			this.PlaneNumber.MinimumWidth = 6;
+			this.PlaneNumber.Name = "PlaneNumber";
 			// 
 			// dataGridViewButtonColumn4
 			// 
@@ -1003,7 +1176,6 @@
 			this.dataGridViewButtonColumn4.HeaderText = "❌";
 			this.dataGridViewButtonColumn4.MinimumWidth = 12;
 			this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-			this.dataGridViewButtonColumn4.ReadOnly = true;
 			this.dataGridViewButtonColumn4.Text = "❌";
 			this.dataGridViewButtonColumn4.ToolTipText = "Delete";
 			this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
@@ -1014,30 +1186,74 @@
 			this.dataGridViewButtonColumn5.HeaderText = "✏";
 			this.dataGridViewButtonColumn5.MinimumWidth = 12;
 			this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-			this.dataGridViewButtonColumn5.ReadOnly = true;
 			this.dataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.dataGridViewButtonColumn5.Text = "✏";
 			this.dataGridViewButtonColumn5.ToolTipText = "Edit";
 			this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
 			// 
-			// CB_Test
+			// dataGridViewTextBoxColumn1
 			// 
-			this.CB_Test.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.CB_Test.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-			this.CB_Test.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CB_Test.FormattingEnabled = true;
-			this.CB_Test.Location = new System.Drawing.Point(12, 72);
-			this.CB_Test.Name = "CB_Test";
-			this.CB_Test.Size = new System.Drawing.Size(121, 24);
-			this.CB_Test.Sorted = true;
-			this.CB_Test.TabIndex = 5;
-			this.CB_Test.Visible = false;
+			this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+			this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.FillWeight = 93.36237F;
+			this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			this.dataGridViewTextBoxColumn4.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this.dataGridViewTextBoxColumn5.FillWeight = 93.36237F;
+			this.dataGridViewTextBoxColumn5.HeaderText = "Number Of Sets";
+			this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			this.dataGridViewTextBoxColumn5.ReadOnly = true;
+			// 
+			// dataGridViewButtonColumn3
+			// 
+			this.dataGridViewButtonColumn3.FillWeight = 32.3605F;
+			this.dataGridViewButtonColumn3.HeaderText = "❌";
+			this.dataGridViewButtonColumn3.MinimumWidth = 12;
+			this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+			this.dataGridViewButtonColumn3.ReadOnly = true;
+			this.dataGridViewButtonColumn3.Text = "❌";
+			this.dataGridViewButtonColumn3.ToolTipText = "Delete";
+			this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+			// 
+			// Edit
+			// 
+			this.Edit.FillWeight = 32.3605F;
+			this.Edit.HeaderText = "✏";
+			this.Edit.MinimumWidth = 12;
+			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
+			this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.Edit.Text = "✏";
+			this.Edit.ToolTipText = "Edit";
+			this.Edit.UseColumnTextForButtonValue = true;
+			// 
+			// View_Fligths
+			// 
+			this.View_Fligths.FillWeight = 32.3605F;
+			this.View_Fligths.HeaderText = "👁‍🗨";
+			this.View_Fligths.MinimumWidth = 6;
+			this.View_Fligths.Name = "View_Fligths";
+			this.View_Fligths.ReadOnly = true;
+			this.View_Fligths.Text = "👁‍🗨";
+			this.View_Fligths.ToolTipText = "View Last Flight Time";
+			this.View_Fligths.UseColumnTextForButtonValue = true;
 			// 
 			// FRM_Admin
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(783, 779);
+			this.ClientSize = new System.Drawing.Size(795, 785);
+			this.Controls.Add(this.groupBox9);
 			this.Controls.Add(this.groupBox7);
 			this.Controls.Add(this.groupBox8);
 			this.Controls.Add(this.groupBox6);
@@ -1070,6 +1286,8 @@
 			this.groupBox8.ResumeLayout(false);
 			this.groupBox8.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.TXT_FlightPrice)).EndInit();
+			this.groupBox9.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.DGV_Admin)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -1120,13 +1338,9 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox TXT_PlaneName;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button BTN_SavePlane;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.DataGridView DGV_Planes;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.DataGridView DGV_Flights;
 		private System.Windows.Forms.GroupBox groupBox8;
@@ -1143,6 +1357,23 @@
 		private System.Windows.Forms.DateTimePicker D_FlightFrom;
 		private System.Windows.Forms.DateTimePicker D_FlightTo;
 		private System.Windows.Forms.NumericUpDown TXT_FlightPrice;
+		private System.Windows.Forms.TextBox TXT_PlaneID;
+		private System.Windows.Forms.Button BTN_SaveFlight;
+		private System.Windows.Forms.TextBox TXT_FligthID;
+		private System.Windows.Forms.GroupBox groupBox9;
+		private System.Windows.Forms.DataGridView DGV_Admin;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
+		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn7;
+		private System.Windows.Forms.Button Save_Admin;
+		private System.Windows.Forms.ComboBox CB_FligthPNum;
+		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.DataGridViewTextBoxColumn F_ID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FROM_CODE;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FROM_TIME;
@@ -1150,8 +1381,14 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn TO_TIME;
 		private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
 		private System.Windows.Forms.DataGridViewTextBoxColumn STATUE;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PlaneNumber;
 		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
 		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn5;
-		private System.Windows.Forms.ComboBox CB_Test;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+		private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
+		private System.Windows.Forms.DataGridViewButtonColumn Edit;
+		private System.Windows.Forms.DataGridViewButtonColumn View_Fligths;
 	}
 }

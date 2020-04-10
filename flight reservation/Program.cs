@@ -22,7 +22,7 @@ namespace flight_reservation
 			{
 				DAL.Data.cn = new Oracle.DataAccess.Client.OracleConnection("Data source=orcl;User Id=hr;Password = hr;");
 				DAL.Data.cn.Open();
-				Application.Run(new PL.FRM_Admin());
+				Application.Run(new FRM_Start());
 			}
 			catch (Exception e)
 			{

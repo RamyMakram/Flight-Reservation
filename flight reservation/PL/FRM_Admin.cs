@@ -13,9 +13,100 @@ namespace flight_reservation.PL
 {
 	public partial class FRM_Admin : Form
 	{
+		OracleDataAdapter da_Admin;
+		OracleCommandBuilder cb_Admin;
+		DataTable dt_Admin;
 		public FRM_Admin()
 		{
 			InitializeComponent();
+		}
+		private void FRM_Admin_Load(object sender, EventArgs e)
+		{
+			try
+			{
+				OracleCommand cmd = new OracleCommand("select * from PASSENGER", DAL.Data.cn);
+				var x = cmd.ExecuteReader();
+				while (x.Read())
+					DGV_Pass.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2), x.GetValue(3), x.GetValue(4), x.GetValue(5));
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			try
+			{
+				OracleCommand cmd = new OracleCommand("get_airports", DAL.Data.cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.Add("airports", OracleDbType.RefCursor, ParameterDirection.Output);
+				var x = cmd.ExecuteReader();
+				DataTable dt = new DataTable();
+				dt.Columns.Add("ID", typeof(int));
+				dt.Columns.Add("Name");
+				while (x.Read())
+				{
+					DGV_AirPort.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2));
+					dt.Rows.Add(int.Parse(x.GetValue(0).ToString()), x.GetValue(1).ToString());
+				}
+				CB_From.DataSource = dt;
+				CB_From.ValueMember = "ID";
+				CB_From.DisplayMember = "Name";
+				CB_To.DataSource = dt.Copy();
+				CB_To.ValueMember = "ID";
+				CB_To.DisplayMember = "Name";
+				CB_From.SelectedIndex = CB_Sate.SelectedIndex = 0; CB_To.SelectedIndex = 1;
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			try
+			{
+				OracleCommand cmd = new OracleCommand("get_Planes", DAL.Data.cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.Add("planes", OracleDbType.RefCursor, ParameterDirection.Output);
+				DataTable dt = new DataTable();
+				(new OracleDataAdapter(cmd)).Fill(dt);
+				int length = dt.Rows.Count;
+				for (int i = 0; i < length; i++)
+				{
+					CB_FligthPNum.Items.Add(dt.Rows[i][0].ToString());
+					DGV_Planes.Rows.Add(dt.Rows[i][0].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][0].ToString());
+				}
+				CB_FligthPNum.SelectedIndex = 0;
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			try
+			{
+				DGV_Flights.Columns.Clear();
+				OracleDataAdapter da_Fligths = new OracleDataAdapter("select e.FLIGHT_NUM,f.airport_name \"From\", e.FROM_TIME \"From Time\", t.airport_name \"To\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\",e.AIRPLAN_ID \"Flight Number\" from FLIGHT e inner join airport f on f.airport_code = e.FROM_CODE inner join airport t on t.airport_code = e.TO_CODE", DAL.Data.cn);
+				DataTable dt_Fligths = new DataTable();
+				da_Fligths.Fill(dt_Fligths);
+				DGV_Flights.DataSource = dt_Fligths;
+				DGV_Flights.Columns[0].Visible = false;
+				DGV_Flights.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Del", Text = "❌", UseColumnTextForButtonValue = true });
+				DGV_Flights.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Edit", Text = "✏", UseColumnTextForButtonValue = true });
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			try
+			{
+				DGV_Admin.Columns.Clear();
+				da_Admin = new OracleDataAdapter("select * from ADMINISTRATOR", DAL.Data.cn);
+				cb_Admin = new OracleCommandBuilder(da_Admin);
+				dt_Admin = new DataTable();
+				da_Admin.Fill(dt_Admin);
+				DGV_Admin.DataSource = dt_Admin;
+				DGV_Admin.Columns[0].Visible = false;
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void BTN_AddPass_Click(object sender, EventArgs e)
@@ -49,81 +140,6 @@ namespace flight_reservation.PL
 			}
 		}
 
-		private void FRM_Admin_Load(object sender, EventArgs e)
-		{
-			try
-			{
-				OracleCommand cmd = new OracleCommand("select * from PASSENGER", DAL.Data.cn);
-				var x = cmd.ExecuteReader();
-				while (x.Read())
-					DGV_Pass.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2), x.GetValue(3), x.GetValue(4), x.GetValue(5));
-			}
-			catch (Exception dddd)
-			{
-				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			try
-			{
-				OracleCommand cmd = new OracleCommand("select * from AIRPORT", DAL.Data.cn);
-				var x = cmd.ExecuteReader();
-				DataTable dt = new DataTable();
-				dt.Columns.Add("ID", typeof(int));
-				dt.Columns.Add("Name");
-				while (x.Read())
-				{
-					DGV_AirPort.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2));
-					dt.Rows.Add(int.Parse(x.GetValue(0).ToString()), x.GetValue(1).ToString());
-				}
-				CB_From.DataSource = dt;
-				CB_From.ValueMember = "ID";
-				CB_From.DisplayMember = "Name";
-				CB_To.DataSource = dt.Copy();
-				CB_To.ValueMember = "ID";
-				CB_To.DisplayMember = "Name";
-				CB_Test.DataSource = dt.Copy();
-				CB_Test.ValueMember = "ID";
-				CB_Test.DisplayMember = "Name";
-				CB_From.SelectedIndex = CB_Sate.SelectedIndex = 0; CB_To.SelectedIndex = 1;
-			}
-			catch (Exception dddd)
-			{
-				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			try
-			{
-				OracleCommand cmd = new OracleCommand("select * from AIRPLANE_INFO", DAL.Data.cn);
-				DataTable dt = new DataTable();
-				(new OracleDataAdapter(cmd)).Fill(dt);
-				int length = dt.Rows.Count;
-				for (int i = 0; i < length; i++)
-				{
-					DGV_Planes.Rows.Add(dt.Rows[i][0].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][0].ToString());
-				};
-			}
-			catch (Exception dddd)
-			{
-				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			try
-			{
-				OracleCommand cmd = new OracleCommand("select * from Flight", DAL.Data.cn);
-				DataTable dt = new DataTable();
-				(new OracleDataAdapter(cmd)).Fill(dt);
-				int length = dt.Rows.Count;
-				for (int i = 0; i < length; i++)
-				{
-					CB_Test.SelectedValue = dt.Rows[i][1];
-					string fr = CB_Test.Text;
-					CB_Test.SelectedValue = dt.Rows[i][4];
-					string to = CB_Test.Text;
-					DGV_Flights.Rows.Add(dt.Rows[i][0].ToString(), fr, dt.Rows[i][2].ToString(), to, dt.Rows[i][3].ToString(), dt.Rows[i][5].ToString(), dt.Rows[i][6].ToString());
-				};
-			}
-			catch (Exception dddd)
-			{
-				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
 
 		private void DGV_Pass_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -294,11 +310,13 @@ namespace flight_reservation.PL
 					{
 						try
 						{
-							OracleCommand cmd = new OracleCommand(@"
-							begin
-								remove_Plane(:Plane_ID,:Row_count);
-							end;
-							", DAL.Data.cn);
+							//OracleCommand cmd = new OracleCommand(@"
+							//begin
+							//	remove_Plane(:Plane_ID,:Row_count);
+							//end;
+							//", DAL.Data.cn);
+							OracleCommand cmd = new OracleCommand("remove_Plane", DAL.Data.cn);
+							cmd.CommandType = CommandType.StoredProcedure;
 							cmd.Parameters.Add("Plane_ID", DGV_Planes.Rows[e.RowIndex].Cells[0].Value);
 							cmd.Parameters.Add("Row_count", OracleDbType.Int16, ParameterDirection.Output);
 							cmd.ExecuteNonQuery();
@@ -316,11 +334,29 @@ namespace flight_reservation.PL
 				}
 				else if (e.ColumnIndex == 4)//Edit
 				{
-					TXT_AirID.Text = DGV_AirPort.Rows[e.RowIndex].Cells[0].Value.ToString();
-					TXT_AirName.Text = DGV_AirPort.Rows[e.RowIndex].Cells[1].Value.ToString();
-					TXT_AirCity.Text = DGV_AirPort.Rows[e.RowIndex].Cells[2].Value.ToString();
-					BTN_AddAir.Visible = false;
-					BTN_SaveAir.Visible = true;
+					TXT_PlaneID.Text = DGV_Planes.Rows[e.RowIndex].Cells[0].Value.ToString();
+					TXT_PlaneName.Text = DGV_Planes.Rows[e.RowIndex].Cells[1].Value.ToString();
+					TXT_PlaneSets.Value = int.Parse(DGV_Planes.Rows[e.RowIndex].Cells[2].Value.ToString());
+					BTN_AddPlane.Visible = false;
+					BTN_SavePlane.Visible = true;
+				}
+				else if (e.ColumnIndex == 5)
+				{
+					try
+					{
+						OracleCommand cmd = new OracleCommand(@"
+						select from_time from flight where flight_num=(
+							select MAX(flight_num) from flight where AIRPLAN_ID=:a_id
+						) ", DAL.Data.cn);
+						cmd.Parameters.Add("a_id", int.Parse(DGV_Planes.Rows[e.RowIndex].Cells[0].Value.ToString()));
+						var x = cmd.ExecuteReader();
+						x.Read();
+						MessageBox.Show(x.GetValue(0).ToString(), "Last Launch");
+					}
+					catch (Exception dddd)
+					{
+						MessageBox.Show("No Launch", "Last Launch");
+					}
 				}
 			}
 		}
@@ -334,25 +370,38 @@ namespace flight_reservation.PL
 					MessageBox.Show("Not Allowed To Make Distniation Is The Sourcse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
-				OracleCommand cmd = new OracleCommand(@"insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE) values 
-				(:id_val,:from_,:fromtime_,:totime_,:to_,:price_,:st_)", DAL.Data.cn);
-				int ID = DAL.Data.Get_Identity();
-				cmd.Parameters.Add("id_val", ID);
-				cmd.Parameters.Add("from_", CB_From.SelectedValue);
-				cmd.Parameters.Add("fromtime_", D_FlightFrom.Value);
-				cmd.Parameters.Add("totime_", D_FlightTo.Value);
-				cmd.Parameters.Add("to_", CB_To.SelectedValue);
-				cmd.Parameters.Add("price_", TXT_FlightPrice.Value);
-				cmd.Parameters.Add("st_", CB_Sate.Text);
-				var x = cmd.ExecuteNonQuery();
-				if (x > 0)
+				if (D_FlightFrom.Value.ToString("dd-MM-yyyy HH:mm") != D_FlightTo.Value.ToString("dd-MM-yyyy HH:mm") && D_FlightFrom.Value < D_FlightTo.Value)
 				{
-					MessageBox.Show("Added", "Success");
-					DGV_Flights.Rows.Add(ID, CB_From.Text, D_FlightFrom.Value, CB_To.Text, D_FlightTo.Value, TXT_FlightPrice.Value, CB_Sate.Text);
+					OracleCommand cmd = new OracleCommand(@"
+					insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values 
+					(:id_val,:from_,:fromtime_,:totime_,:to_,:price_,:st_,:p_ID)", DAL.Data.cn);
+					int ID = DAL.Data.Get_Identity();
+					cmd.Parameters.Add("id_val", ID);
+					cmd.Parameters.Add("from_", CB_From.SelectedValue);
+					cmd.Parameters.Add("fromtime_", D_FlightFrom.Value);
+					cmd.Parameters.Add("totime_", D_FlightTo.Value);
+					cmd.Parameters.Add("to_", CB_To.SelectedValue);
+					cmd.Parameters.Add("price_", TXT_FlightPrice.Value);
+					cmd.Parameters.Add("st_", CB_Sate.Text);
+					cmd.Parameters.Add("p_ID", int.Parse(CB_FligthPNum.Text));
+					var x = cmd.ExecuteNonQuery();
+					if (x > 0)
+					{
+						MessageBox.Show("Added", "Success");
+						DataTable dt = (DataTable)DGV_Flights.DataSource;
+						dt.Rows.Add(ID, CB_From.Text, D_FlightFrom.Value, CB_To.Text, D_FlightTo.Value, TXT_FlightPrice.Value, CB_Sate.Text, CB_FligthPNum.Text);
+						dt.AcceptChanges();
+						DGV_Flights.DataSource = dt;
+					}
+					else
+					{
+						MessageBox.Show("Faild!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 				else
 				{
-					MessageBox.Show("Faild!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Time Not Valid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
 				}
 			}
 			catch (Exception dddd)
@@ -363,7 +412,166 @@ namespace flight_reservation.PL
 
 		private void DGV_Flights_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			if (e.RowIndex > -1)
+			{
+				if (e.ColumnIndex == 8)//Delete
+				{
+					if (MessageBox.Show("Are You Want to Remove this AirPort And His History?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+					{
+						try
+						{
+							OracleCommand cmd = new OracleCommand(@"
+							delete from FLIGHT where FLIGHT_NUM=:f_ID
+							", DAL.Data.cn);
+							cmd.Parameters.Add("f_ID", DGV_Flights.Rows[e.RowIndex].Cells[0].Value);
+							cmd.ExecuteNonQuery();
+							MessageBox.Show("Deleted");
+							DGV_Flights.Rows.RemoveAt(e.RowIndex);
+						}
+						catch (Exception dddd)
+						{
+							MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+					}
+				}
+				else if (e.ColumnIndex == 9)//Edit
+				{
+					DateTime from = Convert.ToDateTime(DGV_Flights.Rows[e.RowIndex].Cells[2].Value.ToString());
+					if (from >= DateTime.Now)
+					{
+						CB_From.SelectedIndex = CB_From.FindStringExact(DGV_Flights.Rows[e.RowIndex].Cells[1].Value.ToString());
+						CB_To.SelectedIndex = CB_To.FindStringExact(DGV_Flights.Rows[e.RowIndex].Cells[3].Value.ToString());
+						CB_Sate.Text = DGV_Flights.Rows[e.RowIndex].Cells[6].Value.ToString();
+						CB_FligthPNum.Text = DGV_Flights.Rows[e.RowIndex].Cells[7].Value.ToString();
+						TXT_FligthID.Text = DGV_Flights.Rows[e.RowIndex].Cells[0].Value.ToString();
+						TXT_FlightPrice.Value = int.Parse(DGV_Flights.Rows[e.RowIndex].Cells[5].Value.ToString());
+						D_FlightFrom.Value = from;
+						D_FlightTo.Value = Convert.ToDateTime(DGV_Flights.Rows[e.RowIndex].Cells[4].Value.ToString());
+						BTN_AddFligth.Visible = false;
+						BTN_SaveFlight.Visible = true;
+					}
+					else
+					{
+						MessageBox.Show("Can't Edit this Flight Because The Fligth Is In Progress", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
 
+		private void BTN_SavePlane_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				OracleCommand command = new OracleCommand(@"
+				declare
+					Plane_row AIRPLANE_INFO%rowtype;
+				begin
+					Plane_row.AIRPLANETYPE_NAME:=:name;
+					Plane_row.AIRPLANE_NUMSEATS:=:num;
+					Plane_row.airplane_id:=:a_id;
+					update_Plane(Plane_row);
+				end;"
+				, DAL.Data.cn);
+				command.Parameters.Add(":name", TXT_PlaneName.Text);
+				command.Parameters.Add(":num", TXT_PlaneSets.Value);
+				command.Parameters.Add(":a_id", int.Parse(TXT_PlaneID.Text));
+				var x = command.ExecuteNonQuery();
+				MessageBox.Show("Updated", "Success");
+				try
+				{
+					foreach (DataGridViewRow i in DGV_Planes.Rows)
+						if (i.Cells[0].Value.ToString() == TXT_PlaneID.Text)
+						{
+							i.Cells[1].Value = TXT_PlaneName.Text;
+							i.Cells[2].Value = TXT_PlaneSets.Value;
+						}
+				}
+				catch (Exception)
+				{
+				}
+				BTN_AddPlane.Visible = true;
+				BTN_SavePlane.Visible = false;
+				TXT_AirID.Text = TXT_PlaneName.Text = "";
+				TXT_PlaneSets.Value = 15;
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void SaveTemp_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				dt_Admin.Columns[0].Unique = true;
+				dt_Admin.PrimaryKey = new DataColumn[] { dt_Admin.Columns[0] };
+				da_Admin.Update(dt_Admin);
+			}
+			catch (Exception ffff)
+			{
+			}
+		}
+
+		private void BTN_SaveFlight_Click(object sender, EventArgs e)
+		{
+			try
+			{
+
+				OracleCommand cmd = new OracleCommand(@"
+				update FLIGHT set FROM_CODE=:from_,FROM_TIME=:fromtime_,TO_CODE=:to_,TO_TIME=:totime_,PRICE=:price_,STATUE=:st_,AIRPLAN_ID=:a_ID where FLIGHT_NUM=:id_
+				", DAL.Data.cn);
+
+				cmd.Parameters.Add("from_", CB_From.SelectedValue);
+				cmd.Parameters.Add("fromtime_", D_FlightFrom.Value);
+				cmd.Parameters.Add("to_", CB_To.SelectedValue);
+				cmd.Parameters.Add("totime_", D_FlightTo.Value);
+				cmd.Parameters.Add("price_", TXT_FlightPrice.Value);
+				cmd.Parameters.Add("st_", CB_Sate.Text);
+				cmd.Parameters.Add("a_ID", int.Parse(CB_FligthPNum.Text));
+				cmd.Parameters.Add("id_", int.Parse(TXT_FligthID.Text));
+				var x = cmd.ExecuteNonQuery();
+				MessageBox.Show("Updated", "Success");
+				try
+				{
+					foreach (DataGridViewRow i in DGV_Flights.Rows)
+						if (i.Cells[0].Value.ToString() == TXT_FligthID.Text)
+						{
+							i.Cells[1].Value = CB_From.Text;
+							i.Cells[2].Value = D_FlightFrom.Value.ToString();
+							i.Cells[3].Value = CB_To.Text;
+							i.Cells[4].Value = D_FlightTo.Value.ToString();
+							i.Cells[5].Value = TXT_FlightPrice.Text;
+							i.Cells[6].Value = CB_Sate.Text;
+							i.Cells[7].Value = CB_FligthPNum.Text;
+						}
+				}
+				catch (Exception)
+				{
+				}
+				BTN_AddFligth.Visible = true;
+				BTN_SaveFlight.Visible = false;
+			}
+			catch (Exception dddd)
+			{
+				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void DGV_Admin_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+		{
+		}
+
+		private void DGV_Admin_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+		{
+			try
+			{
+				int ID = DAL.Data.Get_Identity();
+				DGV_Admin.Rows[e.Row.Index - 1].Cells[0].Value = ID;
+			}
+			catch (Exception ffff)
+			{
+			}
 		}
 	}
 }

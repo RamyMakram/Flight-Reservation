@@ -37,7 +37,8 @@ namespace flight_reservation
 							BTN_Login.Visible = false;
 							LBL_Name.Visible = true;
 							BTN_LogOut.Visible = true;
-							LBL_Name.Text += wr.ReadLine();
+							U_Name = wr.ReadLine();
+							LBL_Name.Text += U_Name;
 							BTN_Book.Enabled = BTN_CancelRes.Enabled = BTN_ViewRes.Enabled = true;
 						}
 						wr.Close();

@@ -57,3 +57,4 @@ C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\bin\Debug\Ora
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.FRM_Reservations.resources
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight reservation.csproj.CopyComplete
 C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.PL.FRM_Admin.resources
+C:\Users\Ramy Makram\Desktop\Flight-Reservation\flight reservation\obj\Debug\flight_reservation.PL.CheckOut.resources

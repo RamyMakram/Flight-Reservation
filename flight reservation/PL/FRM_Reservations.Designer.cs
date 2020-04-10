@@ -31,18 +31,16 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.From = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Depart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Return = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Prize = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -53,63 +51,24 @@
 			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.From,
-            this.To,
-            this.Depart,
-            this.Return,
-            this.Prize});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightSeaGreen;
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dataGridView1.GridColor = System.Drawing.Color.Turquoise;
-			this.dataGridView1.Location = new System.Drawing.Point(0, -2);
+			this.dataGridView1.Location = new System.Drawing.Point(44, 27);
 			this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(912, 485);
+			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dataGridView1.Size = new System.Drawing.Size(782, 434);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-			// 
-			// From
-			// 
-			this.From.HeaderText = "From";
-			this.From.MinimumWidth = 6;
-			this.From.Name = "From";
-			this.From.Width = 125;
-			// 
-			// To
-			// 
-			this.To.HeaderText = "To";
-			this.To.MinimumWidth = 6;
-			this.To.Name = "To";
-			this.To.Width = 125;
-			// 
-			// Depart
-			// 
-			this.Depart.HeaderText = "Depart";
-			this.Depart.MinimumWidth = 6;
-			this.Depart.Name = "Depart";
-			this.Depart.Width = 125;
-			// 
-			// Return
-			// 
-			this.Return.HeaderText = "Return";
-			this.Return.MinimumWidth = 6;
-			this.Return.Name = "Return";
-			this.Return.Width = 125;
-			// 
-			// Prize
-			// 
-			this.Prize.HeaderText = "Prize";
-			this.Prize.MinimumWidth = 6;
-			this.Prize.Name = "Prize";
-			this.Prize.Width = 125;
 			// 
 			// button3
 			// 
@@ -119,7 +78,7 @@
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.ForeColor = System.Drawing.Color.White;
 			this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button3.Location = new System.Drawing.Point(747, 393);
+			this.button3.Location = new System.Drawing.Point(744, 473);
 			this.button3.Margin = new System.Windows.Forms.Padding(2);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(112, 36);
@@ -132,12 +91,15 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(912, 482);
+			this.ClientSize = new System.Drawing.Size(876, 519);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.dataGridView1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "FRM_Reservations";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form4";
+			this.Load += new System.EventHandler(this.FRM_Reservations_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -146,11 +108,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn From;
-        private System.Windows.Forms.DataGridViewTextBoxColumn To;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Depart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Return;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prize;
         private System.Windows.Forms.Button button3;
     }
 }

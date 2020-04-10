@@ -53,22 +53,14 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.button2 = new System.Windows.Forms.Button();
-			this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-			this.comboBox12 = new System.Windows.Forms.ComboBox();
-			this.comboBox11 = new System.Windows.Forms.ComboBox();
-			this.comboBox10 = new System.Windows.Forms.ComboBox();
-			this.comboBox7 = new System.Windows.Forms.ComboBox();
-			this.label14 = new System.Windows.Forms.Label();
+			this.CB_Class = new System.Windows.Forms.ComboBox();
+			this.CB_From = new System.Windows.Forms.ComboBox();
+			this.CB_To = new System.Windows.Forms.ComboBox();
 			this.label18 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -120,7 +112,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(815, 350);
 			this.panel1.TabIndex = 16;
-			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
 			// button1
 			// 
@@ -365,55 +356,17 @@
 			this.label1.TabIndex = 30;
 			this.label1.Text = "From";
 			// 
-			// radioButton2
-			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton2.ForeColor = System.Drawing.Color.LightSeaGreen;
-			this.radioButton2.Location = new System.Drawing.Point(150, 28);
-			this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(169, 35);
-			this.radioButton2.TabIndex = 36;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "Round Trip";
-			this.radioButton2.UseVisualStyleBackColor = false;
-			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-			// 
-			// radioButton3
-			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-			this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioButton3.ForeColor = System.Drawing.Color.LightSeaGreen;
-			this.radioButton3.Location = new System.Drawing.Point(597, 28);
-			this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(147, 35);
-			this.radioButton3.TabIndex = 38;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "One Way";
-			this.radioButton3.UseVisualStyleBackColor = false;
-			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.Transparent;
 			this.panel2.Controls.Add(this.button2);
-			this.panel2.Controls.Add(this.dateTimePicker5);
-			this.panel2.Controls.Add(this.dateTimePicker6);
-			this.panel2.Controls.Add(this.comboBox12);
-			this.panel2.Controls.Add(this.comboBox11);
-			this.panel2.Controls.Add(this.comboBox10);
-			this.panel2.Controls.Add(this.comboBox7);
-			this.panel2.Controls.Add(this.label14);
+			this.panel2.Controls.Add(this.CB_Class);
+			this.panel2.Controls.Add(this.CB_From);
+			this.panel2.Controls.Add(this.CB_To);
 			this.panel2.Controls.Add(this.label18);
-			this.panel2.Controls.Add(this.label13);
 			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.label7);
-			this.panel2.Controls.Add(this.label15);
-			this.panel2.Location = new System.Drawing.Point(66, 86);
+			this.panel2.Location = new System.Drawing.Point(72, 77);
 			this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(860, 383);
@@ -434,74 +387,43 @@
 			this.button2.TabIndex = 39;
 			this.button2.Text = "Book";
 			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// dateTimePicker5
+			// CB_Class
 			// 
-			this.dateTimePicker5.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker5.Location = new System.Drawing.Point(334, 170);
-			this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.dateTimePicker5.Name = "dateTimePicker5";
-			this.dateTimePicker5.Size = new System.Drawing.Size(121, 24);
-			this.dateTimePicker5.TabIndex = 67;
+			this.CB_Class.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_Class.FormattingEnabled = true;
+			this.CB_Class.Items.AddRange(new object[] {
+            "Class A",
+            "Class B",
+            "Economy",
+            "High",
+            "VIP"});
+			this.CB_Class.Location = new System.Drawing.Point(595, 137);
+			this.CB_Class.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.CB_Class.Name = "CB_Class";
+			this.CB_Class.Size = new System.Drawing.Size(129, 24);
+			this.CB_Class.TabIndex = 64;
 			// 
-			// dateTimePicker6
+			// CB_From
 			// 
-			this.dateTimePicker6.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker6.Location = new System.Drawing.Point(87, 174);
-			this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.dateTimePicker6.Name = "dateTimePicker6";
-			this.dateTimePicker6.Size = new System.Drawing.Size(121, 24);
-			this.dateTimePicker6.TabIndex = 66;
+			this.CB_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_From.FormattingEnabled = true;
+			this.CB_From.Location = new System.Drawing.Point(89, 137);
+			this.CB_From.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.CB_From.Name = "CB_From";
+			this.CB_From.Size = new System.Drawing.Size(129, 24);
+			this.CB_From.TabIndex = 63;
 			// 
-			// comboBox12
+			// CB_To
 			// 
-			this.comboBox12.FormattingEnabled = true;
-			this.comboBox12.Location = new System.Drawing.Point(549, 189);
-			this.comboBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboBox12.Name = "comboBox12";
-			this.comboBox12.Size = new System.Drawing.Size(116, 24);
-			this.comboBox12.TabIndex = 64;
-			// 
-			// comboBox11
-			// 
-			this.comboBox11.FormattingEnabled = true;
-			this.comboBox11.Location = new System.Drawing.Point(87, 84);
-			this.comboBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboBox11.Name = "comboBox11";
-			this.comboBox11.Size = new System.Drawing.Size(116, 24);
-			this.comboBox11.TabIndex = 63;
-			// 
-			// comboBox10
-			// 
-			this.comboBox10.FormattingEnabled = true;
-			this.comboBox10.Location = new System.Drawing.Point(334, 84);
-			this.comboBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboBox10.Name = "comboBox10";
-			this.comboBox10.Size = new System.Drawing.Size(116, 24);
-			this.comboBox10.TabIndex = 62;
-			// 
-			// comboBox7
-			// 
-			this.comboBox7.FormattingEnabled = true;
-			this.comboBox7.Location = new System.Drawing.Point(549, 84);
-			this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboBox7.Name = "comboBox7";
-			this.comboBox7.Size = new System.Drawing.Size(116, 24);
-			this.comboBox7.TabIndex = 59;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.BackColor = System.Drawing.Color.Transparent;
-			this.label14.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label14.Location = new System.Drawing.Point(330, 137);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(142, 19);
-			this.label14.TabIndex = 58;
-			this.label14.Text = "Departure Time";
+			this.CB_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_To.FormattingEnabled = true;
+			this.CB_To.Location = new System.Drawing.Point(342, 137);
+			this.CB_To.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.CB_To.Name = "CB_To";
+			this.CB_To.Size = new System.Drawing.Size(129, 24);
+			this.CB_To.TabIndex = 62;
 			// 
 			// label18
 			// 
@@ -509,23 +431,11 @@
 			this.label18.BackColor = System.Drawing.Color.Transparent;
 			this.label18.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label18.Location = new System.Drawing.Point(527, 151);
+			this.label18.Location = new System.Drawing.Point(591, 105);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(55, 19);
 			this.label18.TabIndex = 47;
 			this.label18.Text = "Class";
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.BackColor = System.Drawing.Color.Transparent;
-			this.label13.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label13.Location = new System.Drawing.Point(84, 137);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(143, 19);
-			this.label13.TabIndex = 39;
-			this.label13.Text = "Departure Date";
 			// 
 			// label8
 			// 
@@ -533,7 +443,7 @@
 			this.label8.BackColor = System.Drawing.Color.Transparent;
 			this.label8.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label8.Location = new System.Drawing.Point(330, 43);
+			this.label8.Location = new System.Drawing.Point(341, 105);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(31, 19);
 			this.label8.TabIndex = 58;
@@ -545,23 +455,11 @@
 			this.label7.BackColor = System.Drawing.Color.Transparent;
 			this.label7.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label7.Location = new System.Drawing.Point(85, 43);
+			this.label7.Location = new System.Drawing.Point(87, 105);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(52, 19);
 			this.label7.TabIndex = 39;
 			this.label7.Text = "From";
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.BackColor = System.Drawing.Color.Transparent;
-			this.label15.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label15.Location = new System.Drawing.Point(527, 43);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(168, 19);
-			this.label15.TabIndex = 43;
-			this.label15.Text = "Number of Tickets";
 			// 
 			// FRM_Book
 			// 
@@ -572,8 +470,6 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(927, 510);
 			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.radioButton3);
-			this.Controls.Add(this.radioButton2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.button3);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -581,12 +477,12 @@
 			this.Name = "FRM_Book";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "booking";
+			this.Load += new System.EventHandler(this.FRM_Book_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
         }
 
@@ -595,8 +491,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -619,18 +513,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox CB_Class;
+        private System.Windows.Forms.ComboBox CB_From;
+        private System.Windows.Forms.ComboBox CB_To;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
     }
 }
