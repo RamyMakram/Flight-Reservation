@@ -56,6 +56,13 @@
 			this.BTN_SavePass = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.DGV_Pass = new System.Windows.Forms.DataGridView();
+			this.PASSENGER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_FNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_LNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PASSENGER_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.View = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.BTN_AddAir = new System.Windows.Forms.Button();
 			this.TXT_AirCity = new System.Windows.Forms.TextBox();
@@ -129,13 +136,6 @@
 			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.PASSENGER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_FNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_LNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PASSENGER_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.View = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.DGV_Pass)).BeginInit();
@@ -329,6 +329,69 @@
 			this.DGV_Pass.Size = new System.Drawing.Size(768, 209);
 			this.DGV_Pass.TabIndex = 1;
 			this.DGV_Pass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pass_CellClick);
+			// 
+			// PASSENGER_ID
+			// 
+			this.PASSENGER_ID.HeaderText = "Passanger ID";
+			this.PASSENGER_ID.MinimumWidth = 6;
+			this.PASSENGER_ID.Name = "PASSENGER_ID";
+			this.PASSENGER_ID.ReadOnly = true;
+			this.PASSENGER_ID.Visible = false;
+			// 
+			// PASSENGER_FNAME
+			// 
+			this.PASSENGER_FNAME.FillWeight = 122.5225F;
+			this.PASSENGER_FNAME.HeaderText = "First Name";
+			this.PASSENGER_FNAME.MinimumWidth = 6;
+			this.PASSENGER_FNAME.Name = "PASSENGER_FNAME";
+			this.PASSENGER_FNAME.ReadOnly = true;
+			// 
+			// PASSENGER_LNAME
+			// 
+			this.PASSENGER_LNAME.FillWeight = 122.5225F;
+			this.PASSENGER_LNAME.HeaderText = "Last Name";
+			this.PASSENGER_LNAME.MinimumWidth = 6;
+			this.PASSENGER_LNAME.Name = "PASSENGER_LNAME";
+			this.PASSENGER_LNAME.ReadOnly = true;
+			// 
+			// PASSENGER_EMAIL
+			// 
+			this.PASSENGER_EMAIL.FillWeight = 122.5225F;
+			this.PASSENGER_EMAIL.HeaderText = "Email";
+			this.PASSENGER_EMAIL.MinimumWidth = 6;
+			this.PASSENGER_EMAIL.Name = "PASSENGER_EMAIL";
+			this.PASSENGER_EMAIL.ReadOnly = true;
+			// 
+			// PASSENGER_PHONE
+			// 
+			this.PASSENGER_PHONE.FillWeight = 122.5225F;
+			this.PASSENGER_PHONE.HeaderText = "Phone";
+			this.PASSENGER_PHONE.MinimumWidth = 6;
+			this.PASSENGER_PHONE.Name = "PASSENGER_PHONE";
+			this.PASSENGER_PHONE.ReadOnly = true;
+			// 
+			// Delete
+			// 
+			this.Delete.FillWeight = 42.46774F;
+			this.Delete.HeaderText = "❌";
+			this.Delete.MinimumWidth = 12;
+			this.Delete.Name = "Delete";
+			this.Delete.ReadOnly = true;
+			this.Delete.Text = "❌";
+			this.Delete.ToolTipText = "Delete";
+			this.Delete.UseColumnTextForButtonValue = true;
+			// 
+			// View
+			// 
+			this.View.FillWeight = 44.91978F;
+			this.View.HeaderText = "👁‍🗨";
+			this.View.MinimumWidth = 12;
+			this.View.Name = "View";
+			this.View.ReadOnly = true;
+			this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.View.Text = "👁‍🗨";
+			this.View.ToolTipText = "View Password";
+			this.View.UseColumnTextForButtonValue = true;
 			// 
 			// groupBox3
 			// 
@@ -1174,69 +1237,6 @@
 			this.dataGridViewButtonColumn7.Text = "✏";
 			this.dataGridViewButtonColumn7.ToolTipText = "Edit";
 			this.dataGridViewButtonColumn7.UseColumnTextForButtonValue = true;
-			// 
-			// PASSENGER_ID
-			// 
-			this.PASSENGER_ID.HeaderText = "Passanger ID";
-			this.PASSENGER_ID.MinimumWidth = 6;
-			this.PASSENGER_ID.Name = "PASSENGER_ID";
-			this.PASSENGER_ID.ReadOnly = true;
-			this.PASSENGER_ID.Visible = false;
-			// 
-			// PASSENGER_FNAME
-			// 
-			this.PASSENGER_FNAME.FillWeight = 122.5225F;
-			this.PASSENGER_FNAME.HeaderText = "First Name";
-			this.PASSENGER_FNAME.MinimumWidth = 6;
-			this.PASSENGER_FNAME.Name = "PASSENGER_FNAME";
-			this.PASSENGER_FNAME.ReadOnly = true;
-			// 
-			// PASSENGER_LNAME
-			// 
-			this.PASSENGER_LNAME.FillWeight = 122.5225F;
-			this.PASSENGER_LNAME.HeaderText = "Last Name";
-			this.PASSENGER_LNAME.MinimumWidth = 6;
-			this.PASSENGER_LNAME.Name = "PASSENGER_LNAME";
-			this.PASSENGER_LNAME.ReadOnly = true;
-			// 
-			// PASSENGER_EMAIL
-			// 
-			this.PASSENGER_EMAIL.FillWeight = 122.5225F;
-			this.PASSENGER_EMAIL.HeaderText = "Email";
-			this.PASSENGER_EMAIL.MinimumWidth = 6;
-			this.PASSENGER_EMAIL.Name = "PASSENGER_EMAIL";
-			this.PASSENGER_EMAIL.ReadOnly = true;
-			// 
-			// PASSENGER_PHONE
-			// 
-			this.PASSENGER_PHONE.FillWeight = 122.5225F;
-			this.PASSENGER_PHONE.HeaderText = "Phone";
-			this.PASSENGER_PHONE.MinimumWidth = 6;
-			this.PASSENGER_PHONE.Name = "PASSENGER_PHONE";
-			this.PASSENGER_PHONE.ReadOnly = true;
-			// 
-			// Delete
-			// 
-			this.Delete.FillWeight = 42.46774F;
-			this.Delete.HeaderText = "❌";
-			this.Delete.MinimumWidth = 12;
-			this.Delete.Name = "Delete";
-			this.Delete.ReadOnly = true;
-			this.Delete.Text = "❌";
-			this.Delete.ToolTipText = "Delete";
-			this.Delete.UseColumnTextForButtonValue = true;
-			// 
-			// View
-			// 
-			this.View.FillWeight = 44.91978F;
-			this.View.HeaderText = "👁‍🗨";
-			this.View.MinimumWidth = 12;
-			this.View.Name = "View";
-			this.View.ReadOnly = true;
-			this.View.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.View.Text = "👁‍🗨";
-			this.View.ToolTipText = "View Password";
-			this.View.UseColumnTextForButtonValue = true;
 			// 
 			// FRM_Admin
 			// 

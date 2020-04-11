@@ -62,9 +62,11 @@ namespace flight_reservation
 				{
 					OracleDataAdapter da_Fligths = new OracleDataAdapter("" +
 					"select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME \"From Time\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\" from FLIGHT e " +
-					"where FROM_CODE=:from_ and TO_CODE=:to_", DAL.Data.cn);
+					"where FROM_CODE=:from_ and TO_CODE=:to_ and STATUE=:class_ and FROM_TIME>:date_", DAL.Data.cn);
 					da_Fligths.SelectCommand.Parameters.Add("from_", CB_From.SelectedValue);
 					da_Fligths.SelectCommand.Parameters.Add("to_", CB_To.SelectedValue);
+					da_Fligths.SelectCommand.Parameters.Add("class_", CB_Class.Text);
+					da_Fligths.SelectCommand.Parameters.Add("date_", DateTime.Now);
 					DataTable dt_Fligths = new DataTable();
 					da_Fligths.Fill(dt_Fligths);
 					checkout = new PL.CheckOut();
