@@ -114,5 +114,11 @@ namespace flight_reservation
 
 			}
 		}
+
+		private void BTN_Reports_Click(object sender, EventArgs e)
+		{
+			new PL.Reports().Show();
+			this.Hide();
+		}
 	}
 }

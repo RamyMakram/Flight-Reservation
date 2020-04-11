@@ -143,6 +143,12 @@
       <DependentUpon>FlightsDetails.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\FlightsFromTo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlightsFromTo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\PassDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +213,10 @@
     <EmbeddedResource Include="RPT\FlightsDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FlightsDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\FlightsFromTo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FlightsFromTo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\PassDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

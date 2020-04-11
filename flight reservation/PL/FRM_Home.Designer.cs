@@ -42,6 +42,7 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.LBL_Name = new System.Windows.Forms.Label();
 			this.BTN_LogOut = new System.Windows.Forms.Button();
+			this.BTN_Reports = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// BTN_Login
@@ -70,12 +71,12 @@
 			this.BTN_Book.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BTN_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BTN_Book.ForeColor = System.Drawing.Color.Turquoise;
-			this.BTN_Book.Location = new System.Drawing.Point(611, 298);
+			this.BTN_Book.Location = new System.Drawing.Point(611, 261);
 			this.BTN_Book.Margin = new System.Windows.Forms.Padding(2);
 			this.BTN_Book.Name = "BTN_Book";
 			this.BTN_Book.Size = new System.Drawing.Size(351, 47);
 			this.BTN_Book.TabIndex = 1;
-			this.BTN_Book.Text = "Booking";
+			this.BTN_Book.Text = "Reserve Flight";
 			this.BTN_Book.UseVisualStyleBackColor = false;
 			this.BTN_Book.Click += new System.EventHandler(this.button7_Click);
 			// 
@@ -105,12 +106,12 @@
 			this.BTN_CancelRes.ForeColor = System.Drawing.Color.Turquoise;
 			this.BTN_CancelRes.Image = ((System.Drawing.Image)(resources.GetObject("BTN_CancelRes.Image")));
 			this.BTN_CancelRes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.BTN_CancelRes.Location = new System.Drawing.Point(611, 389);
+			this.BTN_CancelRes.Location = new System.Drawing.Point(611, 335);
 			this.BTN_CancelRes.Margin = new System.Windows.Forms.Padding(2);
 			this.BTN_CancelRes.Name = "BTN_CancelRes";
 			this.BTN_CancelRes.Size = new System.Drawing.Size(351, 46);
 			this.BTN_CancelRes.TabIndex = 7;
-			this.BTN_CancelRes.Text = "cancel reservation";
+			this.BTN_CancelRes.Text = "Cancel Reservation";
 			this.BTN_CancelRes.UseVisualStyleBackColor = false;
 			this.BTN_CancelRes.Click += new System.EventHandler(this.button5_Click);
 			// 
@@ -123,12 +124,12 @@
 			this.BTN_ViewRes.ForeColor = System.Drawing.Color.Turquoise;
 			this.BTN_ViewRes.Image = ((System.Drawing.Image)(resources.GetObject("BTN_ViewRes.Image")));
 			this.BTN_ViewRes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.BTN_ViewRes.Location = new System.Drawing.Point(611, 206);
+			this.BTN_ViewRes.Location = new System.Drawing.Point(611, 188);
 			this.BTN_ViewRes.Margin = new System.Windows.Forms.Padding(2);
 			this.BTN_ViewRes.Name = "BTN_ViewRes";
 			this.BTN_ViewRes.Size = new System.Drawing.Size(351, 46);
 			this.BTN_ViewRes.TabIndex = 6;
-			this.BTN_ViewRes.Text = "Review Reservation";
+			this.BTN_ViewRes.Text = "Review My Reservation";
 			this.BTN_ViewRes.UseVisualStyleBackColor = false;
 			this.BTN_ViewRes.Click += new System.EventHandler(this.button4_Click_1);
 			// 
@@ -174,7 +175,7 @@
 			this.BTN_Contact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BTN_Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BTN_Contact.ForeColor = System.Drawing.Color.Turquoise;
-			this.BTN_Contact.Location = new System.Drawing.Point(611, 482);
+			this.BTN_Contact.Location = new System.Drawing.Point(611, 481);
 			this.BTN_Contact.Margin = new System.Windows.Forms.Padding(2);
 			this.BTN_Contact.Name = "BTN_Contact";
 			this.BTN_Contact.Size = new System.Drawing.Size(351, 47);
@@ -241,6 +242,23 @@
 			this.BTN_LogOut.Visible = false;
 			this.BTN_LogOut.Click += new System.EventHandler(this.BTN_LogOut_Click);
 			// 
+			// BTN_Reports
+			// 
+			this.BTN_Reports.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.BTN_Reports.Enabled = false;
+			this.BTN_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.BTN_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BTN_Reports.ForeColor = System.Drawing.Color.Turquoise;
+			this.BTN_Reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.BTN_Reports.Location = new System.Drawing.Point(611, 408);
+			this.BTN_Reports.Margin = new System.Windows.Forms.Padding(2);
+			this.BTN_Reports.Name = "BTN_Reports";
+			this.BTN_Reports.Size = new System.Drawing.Size(351, 46);
+			this.BTN_Reports.TabIndex = 7;
+			this.BTN_Reports.Text = "Reports";
+			this.BTN_Reports.UseVisualStyleBackColor = false;
+			this.BTN_Reports.Click += new System.EventHandler(this.BTN_Reports_Click);
+			// 
 			// FRM_Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -257,6 +275,7 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
+			this.Controls.Add(this.BTN_Reports);
 			this.Controls.Add(this.BTN_CancelRes);
 			this.Controls.Add(this.BTN_ViewRes);
 			this.Controls.Add(this.BTN_Fligth);
@@ -288,6 +307,7 @@
 		private System.Windows.Forms.Label LBL_Name;
 		private System.Windows.Forms.Button BTN_ViewRes;
 		private System.Windows.Forms.Button BTN_LogOut;
+		private System.Windows.Forms.Button BTN_Reports;
 	}
 }
 

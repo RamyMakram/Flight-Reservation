@@ -90,6 +90,40 @@ namespace flight_reservation.PL
 			{
 				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			D_FlightFrom.MinDate = DateTime.Now;
+			D_FlightTo.MinDate = DateTime.Now;
+		}
+
+		private void BTN_From_To_Click(object sender, EventArgs e)
+		{
+			frm = new RPT.rpt_view();
+			RPT.FlightsDetails report = new RPT.FlightsDetails();
+			OracleCommand cmd = new OracleCommand("fligths_print", DAL.Data.cn);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.Add("from_", CB_From.SelectedValue);
+			cmd.Parameters.Add("to_", CB_To.SelectedValue);
+			cmd.Parameters.Add("fligths", OracleDbType.RefCursor, ParameterDirection.Output);
+			DataTable dt = new DataTable();
+			new OracleDataAdapter(cmd).Fill(dt);
+			report.SetDataSource(dt);
+			frm.crystalReportViewer1.ReportSource = report;
+			frm.Show();
+		}
+
+		private void BTN_From_To_Click_1(object sender, EventArgs e)
+		{
+			frm = new RPT.rpt_view();
+			RPT.FlightsFromTo report = new RPT.FlightsFromTo();
+			OracleCommand cmd = new OracleCommand("fligth_FromTo_print", DAL.Data.cn);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.Add("from_", D_FlightFrom.Value);
+			cmd.Parameters.Add("to_", D_FlightTo.Value);
+			cmd.Parameters.Add("fligths", OracleDbType.RefCursor, ParameterDirection.Output);
+			DataTable dt = new DataTable();
+			new OracleDataAdapter(cmd).Fill(dt);
+			report.SetDataSource(dt);
+			frm.crystalReportViewer1.ReportSource = report;
+			frm.Show();
 		}
 	}
 }
