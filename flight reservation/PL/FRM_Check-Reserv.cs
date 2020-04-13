@@ -42,18 +42,25 @@ namespace flight_reservation
 				if (CB_From.SelectedValue != CB_To.SelectedValue)
 				{
 					OracleDataAdapter da_Fligths = new OracleDataAdapter("" +
-					"select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME \"From Time\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\" from FLIGHT e " +
-					"where FROM_CODE=:from_ and TO_CODE=:to_", DAL.Data.cn);
+					"select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME \"From Time\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\" ,FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) \"Availbe Sets\" from FLIGHT e " +
+					"where FROM_CODE=:from_ and TO_CODE=:to_ and STATUE=:class_ and FROM_TIME>:date_ and FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) >0", DAL.Data.cn);
 					da_Fligths.SelectCommand.Parameters.Add("from_", CB_From.SelectedValue);
 					da_Fligths.SelectCommand.Parameters.Add("to_", CB_To.SelectedValue);
+					da_Fligths.SelectCommand.Parameters.Add("class_", CB_Class.Text);
+					da_Fligths.SelectCommand.Parameters.Add("date_", DateTime.Now);
 					DataTable dt_Fligths = new DataTable();
 					da_Fligths.Fill(dt_Fligths);
-					PL.CheckOut checkout = new PL.CheckOut();
-					checkout.DGV_Flights.DataSource = dt_Fligths;
-					checkout.DGV_Flights.Columns[0].Visible = false;
-					checkout.DGV_Flights.Columns[1].Visible = false;
-					checkout.Size = new Size(937, 349);
-					checkout.ShowDialog();
+					if (dt_Fligths.Rows.Count > 0)
+					{
+						PL.CheckOut checkout = new PL.CheckOut();
+						checkout.DGV_Flights.DataSource = dt_Fligths;
+						checkout.DGV_Flights.Columns[0].Visible = false;
+						checkout.DGV_Flights.Columns[1].Visible = false;
+						checkout.Size = new Size(937, 349);
+						checkout.ShowDialog();
+					}
+					else
+						MessageBox.Show("Sorry!! \nNo Avalible Fligths 😢😢");
 				}
 			}
 			catch (Exception dddd)

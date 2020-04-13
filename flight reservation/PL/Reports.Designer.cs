@@ -1,4 +1,6 @@
-﻿namespace flight_reservation.PL
+﻿using System.Windows.Forms;
+
+namespace flight_reservation.PL
 {
 	partial class Reports
 	{
@@ -18,6 +20,7 @@
 				components.Dispose();
 			}
 			base.Dispose(disposing);
+			Application.Exit();
 		}
 
 		#region Windows Form Designer generated code

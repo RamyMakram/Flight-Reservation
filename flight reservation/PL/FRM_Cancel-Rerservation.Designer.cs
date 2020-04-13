@@ -33,8 +33,10 @@
 			this.BTN_Cancel = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.TXT_FlightNum = new System.Windows.Forms.NumericUpDown();
-			((System.ComponentModel.ISupportInitialize)(this.TXT_FlightNum)).BeginInit();
+			this.CB_FlightNum = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.CB_SetsNum = new System.Windows.Forms.ComboBox();
+			this.BTN_Confirm = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button3
@@ -61,10 +63,10 @@
 			this.BTN_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BTN_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BTN_Cancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.BTN_Cancel.Location = new System.Drawing.Point(102, 339);
+			this.BTN_Cancel.Location = new System.Drawing.Point(76, 353);
 			this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.BTN_Cancel.Name = "BTN_Cancel";
-			this.BTN_Cancel.Size = new System.Drawing.Size(221, 44);
+			this.BTN_Cancel.Size = new System.Drawing.Size(363, 44);
 			this.BTN_Cancel.TabIndex = 41;
 			this.BTN_Cancel.Text = "Cancel Reservation";
 			this.BTN_Cancel.UseVisualStyleBackColor = false;
@@ -76,11 +78,11 @@
 			this.label12.BackColor = System.Drawing.Color.Transparent;
 			this.label12.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.LightSeaGreen;
-			this.label12.Location = new System.Drawing.Point(160, 214);
+			this.label12.Location = new System.Drawing.Point(181, 220);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(102, 19);
+			this.label12.Size = new System.Drawing.Size(130, 19);
 			this.label12.TabIndex = 38;
-			this.label12.Text = "Flight Num";
+			this.label12.Text = "Flight Number";
 			// 
 			// label2
 			// 
@@ -94,27 +96,54 @@
 			this.label2.TabIndex = 36;
 			this.label2.Text = "Cancel Reservation";
 			// 
-			// TXT_FlightNum
+			// CB_FlightNum
 			// 
-			this.TXT_FlightNum.Location = new System.Drawing.Point(58, 262);
-			this.TXT_FlightNum.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-			this.TXT_FlightNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.TXT_FlightNum.Name = "TXT_FlightNum";
-			this.TXT_FlightNum.Size = new System.Drawing.Size(308, 24);
-			this.TXT_FlightNum.TabIndex = 42;
-			this.TXT_FlightNum.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.CB_FlightNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_FlightNum.FormattingEnabled = true;
+			this.CB_FlightNum.Location = new System.Drawing.Point(141, 265);
+			this.CB_FlightNum.Name = "CB_FlightNum";
+			this.CB_FlightNum.Size = new System.Drawing.Size(216, 24);
+			this.CB_FlightNum.TabIndex = 43;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+			this.label1.Location = new System.Drawing.Point(181, 220);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(144, 19);
+			this.label1.TabIndex = 38;
+			this.label1.Text = "Number Of Sets";
+			this.label1.Visible = false;
+			// 
+			// CB_SetsNum
+			// 
+			this.CB_SetsNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CB_SetsNum.FormattingEnabled = true;
+			this.CB_SetsNum.Location = new System.Drawing.Point(141, 265);
+			this.CB_SetsNum.Name = "CB_SetsNum";
+			this.CB_SetsNum.Size = new System.Drawing.Size(216, 24);
+			this.CB_SetsNum.TabIndex = 43;
+			this.CB_SetsNum.Visible = false;
+			// 
+			// BTN_Confirm
+			// 
+			this.BTN_Confirm.BackColor = System.Drawing.Color.OrangeRed;
+			this.BTN_Confirm.FlatAppearance.BorderSize = 0;
+			this.BTN_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.BTN_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BTN_Confirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.BTN_Confirm.Location = new System.Drawing.Point(76, 348);
+			this.BTN_Confirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.BTN_Confirm.Name = "BTN_Confirm";
+			this.BTN_Confirm.Size = new System.Drawing.Size(363, 44);
+			this.BTN_Confirm.TabIndex = 41;
+			this.BTN_Confirm.Text = "Confirm";
+			this.BTN_Confirm.UseVisualStyleBackColor = false;
+			this.BTN_Confirm.Visible = false;
+			this.BTN_Confirm.Click += new System.EventHandler(this.BTN_Confirm_Click);
 			// 
 			// cancel
 			// 
@@ -124,16 +153,20 @@
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 450);
-			this.Controls.Add(this.TXT_FlightNum);
 			this.Controls.Add(this.BTN_Cancel);
-			this.Controls.Add(this.label12);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.button3);
+			this.Controls.Add(this.CB_FlightNum);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.CB_SetsNum);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.BTN_Confirm);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "cancel";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "cancel";
-			((System.ComponentModel.ISupportInitialize)(this.TXT_FlightNum)).EndInit();
+			this.Load += new System.EventHandler(this.cancel_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -144,6 +177,9 @@
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.NumericUpDown TXT_FlightNum;
+		private System.Windows.Forms.ComboBox CB_FlightNum;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ComboBox CB_SetsNum;
+		private System.Windows.Forms.Button BTN_Confirm;
 	}
 }

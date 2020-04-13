@@ -48,7 +48,7 @@ namespace flight_reservation.PL
 				cmd.Parameters.Add("planid", int.Parse(DGV_Flights.CurrentRow.Cells[1].Value.ToString()));
 				cmd.Parameters.Add("n", OracleDbType.Int16, ParameterDirection.Output);
 				var x = cmd.ExecuteNonQuery();
-				int le = int.Parse(cmd.Parameters[1].Value.ToString());
+				int le = int.Parse(cmd.Parameters[2].Value.ToString());
 				if (le <= 0)
 				{
 					MessageBox.Show("Sorry!! No Avalibe Sets", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,7 +66,7 @@ namespace flight_reservation.PL
 				}
 				CB_Sets.SelectedIndex = 0;
 			}
-			catch (Exception eeee)
+			catch
 			{
 				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}

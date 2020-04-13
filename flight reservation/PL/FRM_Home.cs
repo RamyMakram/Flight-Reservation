@@ -39,7 +39,7 @@ namespace flight_reservation
 							BTN_LogOut.Visible = true;
 							U_Name = wr.ReadLine();
 							LBL_Name.Text += U_Name;
-							BTN_Book.Enabled = BTN_CancelRes.Enabled = BTN_ViewRes.Enabled = true;
+							BTN_Book.Enabled = BTN_CancelRes.Enabled = BTN_ViewRes.Enabled = BTN_Reports.Enabled = true;
 						}
 						wr.Close();
 					}
@@ -50,7 +50,7 @@ namespace flight_reservation
 					LBL_Name.Visible = true;
 					BTN_LogOut.Visible = true;
 					LBL_Name.Text += U_Name;
-					BTN_Book.Enabled = BTN_CancelRes.Enabled = BTN_ViewRes.Enabled = true;
+					BTN_Book.Enabled = BTN_CancelRes.Enabled = BTN_ViewRes.Enabled = BTN_Reports.Enabled = true;
 				}
 			}
 			catch (Exception eddd)
@@ -106,6 +106,8 @@ namespace flight_reservation
 			try
 			{
 				File.Delete("log.txt");
+				U_Name = null;
+				U_ID = 0;
 				this.Hide();
 				new FRM_Start().Show();
 			}

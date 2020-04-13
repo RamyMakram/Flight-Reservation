@@ -1,4 +1,6 @@
-﻿namespace flight_reservation.PL
+﻿using System.Windows.Forms;
+
+namespace flight_reservation.PL
 {
 	partial class FRM_Admin
 	{
@@ -20,6 +22,7 @@
 					components.Dispose();
 				}
 				base.Dispose(disposing);
+				Application.Exit();
 			}
 		}
 
@@ -171,7 +174,7 @@
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(774, 158);
+			this.groupBox1.Size = new System.Drawing.Size(795, 158);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Passengers";
@@ -283,13 +286,14 @@
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox2.Location = new System.Drawing.Point(0, 158);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(774, 232);
+			this.groupBox2.Size = new System.Drawing.Size(795, 232);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Passengers";
 			// 
 			// DGV_Pass
 			// 
+			this.DGV_Pass.AllowUserToAddRows = false;
 			this.DGV_Pass.AllowUserToDeleteRows = false;
 			this.DGV_Pass.AllowUserToOrderColumns = true;
 			this.DGV_Pass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -326,7 +330,7 @@
 			this.DGV_Pass.Name = "DGV_Pass";
 			this.DGV_Pass.ReadOnly = true;
 			this.DGV_Pass.RowHeadersWidth = 51;
-			this.DGV_Pass.Size = new System.Drawing.Size(768, 209);
+			this.DGV_Pass.Size = new System.Drawing.Size(789, 209);
 			this.DGV_Pass.TabIndex = 1;
 			this.DGV_Pass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pass_CellClick);
 			// 
@@ -405,7 +409,7 @@
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox3.Location = new System.Drawing.Point(0, 390);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(774, 137);
+			this.groupBox3.Size = new System.Drawing.Size(795, 137);
 			this.groupBox3.TabIndex = 3;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Airport";
@@ -477,13 +481,14 @@
 			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox4.Location = new System.Drawing.Point(0, 527);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(774, 232);
+			this.groupBox4.Size = new System.Drawing.Size(795, 232);
 			this.groupBox4.TabIndex = 4;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "AirPorts";
 			// 
 			// DGV_AirPort
 			// 
+			this.DGV_AirPort.AllowUserToAddRows = false;
 			this.DGV_AirPort.AllowUserToDeleteRows = false;
 			this.DGV_AirPort.AllowUserToOrderColumns = true;
 			this.DGV_AirPort.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -518,7 +523,7 @@
 			this.DGV_AirPort.Name = "DGV_AirPort";
 			this.DGV_AirPort.ReadOnly = true;
 			this.DGV_AirPort.RowHeadersWidth = 51;
-			this.DGV_AirPort.Size = new System.Drawing.Size(768, 209);
+			this.DGV_AirPort.Size = new System.Drawing.Size(789, 209);
 			this.DGV_AirPort.TabIndex = 1;
 			this.DGV_AirPort.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_AirPort_CellClick);
 			// 
@@ -581,7 +586,7 @@
 			this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox5.Location = new System.Drawing.Point(0, 759);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(774, 137);
+			this.groupBox5.Size = new System.Drawing.Size(795, 137);
 			this.groupBox5.TabIndex = 5;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "AirPlane";
@@ -668,13 +673,14 @@
 			this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox6.Location = new System.Drawing.Point(0, 896);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(774, 232);
+			this.groupBox6.Size = new System.Drawing.Size(795, 232);
 			this.groupBox6.TabIndex = 6;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Planes";
 			// 
 			// DGV_Planes
 			// 
+			this.DGV_Planes.AllowUserToAddRows = false;
 			this.DGV_Planes.AllowUserToDeleteRows = false;
 			this.DGV_Planes.AllowUserToOrderColumns = true;
 			this.DGV_Planes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -710,7 +716,7 @@
 			this.DGV_Planes.Name = "DGV_Planes";
 			this.DGV_Planes.ReadOnly = true;
 			this.DGV_Planes.RowHeadersWidth = 51;
-			this.DGV_Planes.Size = new System.Drawing.Size(768, 209);
+			this.DGV_Planes.Size = new System.Drawing.Size(789, 209);
 			this.DGV_Planes.TabIndex = 1;
 			this.DGV_Planes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Planes_CellClick);
 			// 
@@ -777,13 +783,14 @@
 			this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox7.Location = new System.Drawing.Point(0, 1349);
 			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(774, 232);
+			this.groupBox7.Size = new System.Drawing.Size(795, 232);
 			this.groupBox7.TabIndex = 8;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Flights";
 			// 
 			// DGV_Flights
 			// 
+			this.DGV_Flights.AllowUserToAddRows = false;
 			this.DGV_Flights.AllowUserToDeleteRows = false;
 			this.DGV_Flights.AllowUserToOrderColumns = true;
 			this.DGV_Flights.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -822,7 +829,7 @@
 			this.DGV_Flights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.DGV_Flights.Name = "DGV_Flights";
 			this.DGV_Flights.RowHeadersWidth = 51;
-			this.DGV_Flights.Size = new System.Drawing.Size(768, 209);
+			this.DGV_Flights.Size = new System.Drawing.Size(789, 209);
 			this.DGV_Flights.TabIndex = 1;
 			this.DGV_Flights.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Flights_CellClick);
 			// 
@@ -918,7 +925,7 @@
 			this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox8.Location = new System.Drawing.Point(0, 1128);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(774, 221);
+			this.groupBox8.Size = new System.Drawing.Size(795, 221);
 			this.groupBox8.TabIndex = 7;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Flight";
@@ -1127,7 +1134,7 @@
 			this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox9.Location = new System.Drawing.Point(0, 1581);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(774, 318);
+			this.groupBox9.Size = new System.Drawing.Size(795, 318);
 			this.groupBox9.TabIndex = 9;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Admin";
@@ -1242,7 +1249,7 @@
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(795, 785);
+			this.ClientSize = new System.Drawing.Size(816, 785);
 			this.Controls.Add(this.groupBox9);
 			this.Controls.Add(this.groupBox7);
 			this.Controls.Add(this.groupBox8);

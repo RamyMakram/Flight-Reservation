@@ -126,7 +126,7 @@ namespace flight_reservation.PL
 				if (x > 0)
 				{
 					MessageBox.Show("Added", "Success");
-					DGV_Pass.Rows.Add(ID, TXT_FName.Text, TXT_LName.Text, TXT_Mail.Text, TXT_Pass.Text, TXT_Phone.Text);
+					DGV_Pass.Rows.Add(ID, TXT_FName.Text, TXT_LName.Text, TXT_Mail.Text, TXT_Phone.Text);
 					TXT_FName.Text = TXT_LName.Text = TXT_Mail.Text = TXT_Pass.Text = TXT_Phone.Text = "";
 				}
 				else
