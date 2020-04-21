@@ -5,7 +5,7 @@
 --  DDL for Sequence SEQUENCE1
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "SEQUENCE1"  MINVALUE 1 MAXVALUE 9999 INCREMENT BY 1 START WITH 221 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "SEQUENCE1"  MINVALUE 1 MAXVALUE 9999 INCREMENT BY 1 START WITH 241 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table ADMINISTRATOR
 --------------------------------------------------------
@@ -123,8 +123,6 @@ REM INSERTING into SOLVE
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into PASSENGER_FLIGHT
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID,N_SETS) values (26,204,115,209,1);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID,N_SETS) values (26,204,5635,208,49);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PASSENGER_FLIGHT
@@ -442,10 +440,10 @@ set define off;
 
   CREATE OR REPLACE PROCEDURE "CANCEL_RESERV" (F_ID IN NUMBER, P_ID IN NUMBER, N IN NUMBER) AS
 BEGIN
-  IF N=0 THEN
+  IF N=1 THEN
     delete from PASSENGER_FLIGHT where flight_num= f_id and PASSENGER_ID= p_id;
   ELSE
-    UPDATE PASSENGER_FLIGHT set price=price-(price/ n_sets)* n , n_sets= n_sets- n where flight_num= f_id and PASSENGER_ID= p_id;
+    UPDATE PASSENGER_FLIGHT set price=price-((price/ n_sets)* n) , n_sets= n_sets- n where flight_num= f_id and PASSENGER_ID= p_id;
   END IF;
 END;
 
