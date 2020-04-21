@@ -1,11 +1,11 @@
 --------------------------------------------------------
---  File created - Monday-April-13-2020   
+--  File created - Tuesday-April-21-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence SEQUENCE1
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "SEQUENCE1"  MINVALUE 1 MAXVALUE 9999 INCREMENT BY 1 START WITH 161 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "SEQUENCE1"  MINVALUE 1 MAXVALUE 9999 INCREMENT BY 1 START WITH 221 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table ADMINISTRATOR
 --------------------------------------------------------
@@ -73,10 +73,11 @@
 --------------------------------------------------------
 
   CREATE TABLE "PASSENGER_FLIGHT" 
-   (	"PASSENGER_ID" NUMBER(10,0), 
+   (	"PASSENGER_ID" NUMBER(10,0) DEFAULT 1, 
 	"FLIGHT_NUM" NUMBER(10,0), 
 	"PRICE" NUMBER, 
-	"ID" NUMBER
+	"ID" NUMBER, 
+	"N_SETS" NUMBER DEFAULT 1
    ) ;
 --------------------------------------------------------
 --  DDL for Table PROBLEM
@@ -101,6 +102,7 @@
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into PROBLEM
+Insert into PROBLEM (PASSENGER_ID,PROBLEM_NAME,PROBLEM_DEFINE) values (182,'dwddw','wdwd');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PROBLEM
@@ -121,32 +123,8 @@ REM INSERTING into SOLVE
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into PASSENGER_FLIGHT
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,115);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,116);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,117);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,118);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,119);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,120);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,121);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,122);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,123);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,124);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,125);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,126);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,127);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,128);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,129);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,130);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,131);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,132);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,133);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,134);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,135);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,136);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,137);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,138);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,139);
-Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,100,140);
+Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID,N_SETS) values (26,204,115,209,1);
+Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID,N_SETS) values (26,204,5635,208,49);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE PASSENGER_FLIGHT
@@ -157,12 +135,11 @@ Insert into PASSENGER_FLIGHT (PASSENGER_ID,FLIGHT_NUM,PRICE,ID) values (26,85,10
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into ADMINISTRATOR
+Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (186,'9','15');
 Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (70,'1','1');
 Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (80,'6','12');
-Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (82,'8','8');
-Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (81,'7','7');
-Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (83,'9','9');
-Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (111,'ramy','ramy');
+Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (82,'8','84');
+Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PASSWORD) values (81,'7','999');
 
 ---------------------------------------------------
 --   END DATA FOR TABLE ADMINISTRATOR
@@ -173,6 +150,7 @@ Insert into ADMINISTRATOR (ADMINISTRATOR_ID,ADMINISTRATOR_USER,ADMINISTRATOR_PAS
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into AIRPLANE_INFO
+Insert into AIRPLANE_INFO (AIRPLANE_ID,AIRPLANE_NUMSEATS,AIRPLANETYPE_NAME) values (184,'50','Type45');
 Insert into AIRPLANE_INFO (AIRPLANE_ID,AIRPLANE_NUMSEATS,AIRPLANETYPE_NAME) values (31,'44','TypeX');
 Insert into AIRPLANE_INFO (AIRPLANE_ID,AIRPLANE_NUMSEATS,AIRPLANETYPE_NAME) values (32,'31','TypeA');
 Insert into AIRPLANE_INFO (AIRPLANE_ID,AIRPLANE_NUMSEATS,AIRPLANETYPE_NAME) values (29,'15','AirBas');
@@ -189,13 +167,19 @@ Insert into AIRPLANE_INFO (AIRPLANE_ID,AIRPLANE_NUMSEATS,AIRPLANETYPE_NAME) valu
 REM INSERTING into FLIGHT
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (63,20,to_timestamp('10-APR-20 02.21.12.598748000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('19-APR-20 02.21.12.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',29);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (84,20,to_timestamp('10-APR-20 06.31.14.388724000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('16-APR-20 06.31.14.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',29);
-Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (105,21,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),103,156,'VIP',30);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (185,20,to_timestamp('14-APR-20 09.33.10.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('15-APR-20 09.33.10.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',31);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (205,20,to_timestamp('22-APR-20 02.11.29.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('25-APR-20 02.11.29.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',30);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (105,23,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),22,156,'VIP',30);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (106,21,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),103,100,'Economy',30);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (85,20,to_timestamp('18-APR-20 06.33.38.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('24-APR-20 06.33.38.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',31);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (107,21,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),103,120,'Class A',30);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (108,21,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),103,101,'Class B',29);
 Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (109,20,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,101,'Class B',30);
-Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (110,20,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,150,'VIP',30);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (110,20,to_timestamp('22-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('30-APR-20 03.32.09.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),24,150,'VIP',30);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (201,183,to_timestamp('23-APR-20 01.48.21.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('25-APR-20 01.48.21.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),20,100,'Class A',184);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (202,183,to_timestamp('23-APR-20 01.48.21.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('25-APR-20 01.48.21.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),20,200,'VIP',184);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (204,20,to_timestamp('23-APR-20 02.06.13.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('24-APR-20 02.06.13.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',184);
+Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,AIRPLAN_ID) values (207,20,to_timestamp('23-APR-20 02.36.02.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),to_timestamp('24-APR-20 02.36.02.000000000 PM','DD-MON-RR HH.MI.SS.FF AM'),21,100,'Class A',184);
 
 ---------------------------------------------------
 --   END DATA FOR TABLE FLIGHT
@@ -206,7 +190,7 @@ Insert into FLIGHT (FLIGHT_NUM,FROM_CODE,FROM_TIME,TO_TIME,TO_CODE,PRICE,STATUE,
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into PASSENGER
-Insert into PASSENGER (PASSENGER_ID,PASSENGER_FNAME,PASSENGER_LNAME,PASSENGER_EMAIL,PASSENGER_PASSWORD,PASSENGER_PHONE) values (101,'Ehab','Magdy','e','e','012236449888');
+Insert into PASSENGER (PASSENGER_ID,PASSENGER_FNAME,PASSENGER_LNAME,PASSENGER_EMAIL,PASSENGER_PASSWORD,PASSENGER_PHONE) values (182,'a','b','b@.com','a','0121000345655');
 Insert into PASSENGER (PASSENGER_ID,PASSENGER_FNAME,PASSENGER_LNAME,PASSENGER_EMAIL,PASSENGER_PASSWORD,PASSENGER_PHONE) values (26,'Ramy','Makram','ramy','ramy','000000');
 
 ---------------------------------------------------
@@ -218,9 +202,10 @@ Insert into PASSENGER (PASSENGER_ID,PASSENGER_FNAME,PASSENGER_LNAME,PASSENGER_EM
 --   FILTER = none used
 ---------------------------------------------------
 REM INSERTING into AIRPORT
+Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (183,'ZOMM','Cairo');
 Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (20,'Cairo','Egypt');
 Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (21,'Safaga','Egypt');
-Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (22,'El3Arka','Egypt');
+Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (22,'El3Arkaa','Egypt');
 Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (23,'ElOxur','Egypt');
 Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (24,'Sharm ElShek','Egypt');
 Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (103,'Londo','Canada');
@@ -386,10 +371,24 @@ taked_sets number;
 A_S NUMBER;
 BEGIN
 select airplane_numseats into max_sets from airplane_info where airplane_id= planID;
-select count(*) into taked_sets FROM passenger_flight where flight_num= flightid;
+select nvl(SUM(n_sets),0) into taked_sets FROM passenger_flight where flight_num= flightid;
 A_S:= max_sets- taked_sets;
 RETURN A_S;
 END;
+
+/
+
+--------------------------------------------------------
+--  DDL for Function GET_PRICE_SUM_PASS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "GET_PRICE_SUM_PASS" (PassID IN NUMBER)RETURN NUMBER
+AS
+sum_ NUMBER;
+BEGIN
+  select NVL(sum(price),0) into sum_ from passenger_flight where passenger_id= passid;
+  RETURN sum_;
+END GET_PRICE_SUM_PASS;
 
 /
 
@@ -416,7 +415,7 @@ end;
 AS
 count_ NUMBER;
 BEGIN
-select count(*) into count_ from passenger_flight where passenger_id= passid;
+select NVL(sum(n_sets),0) into count_ from passenger_flight where passenger_id= passid;
   RETURN count_;
 END get_TicketsNum;
 
@@ -442,14 +441,12 @@ end Add_Plane;
 set define off;
 
   CREATE OR REPLACE PROCEDURE "CANCEL_RESERV" (F_ID IN NUMBER, P_ID IN NUMBER, N IN NUMBER) AS
-Counter NUMBER;
 BEGIN
-counter:= n;
-  loop
-  delete from PASSENGER_FLIGHT where flight_num= f_id and PASSENGER_ID= p_id and ROWNUM = 1;
-  counter:=counter-1;
-  EXIT WHEN counter=0;
-  End Loop;
+  IF N=0 THEN
+    delete from PASSENGER_FLIGHT where flight_num= f_id and PASSENGER_ID= p_id;
+  ELSE
+    UPDATE PASSENGER_FLIGHT set price=price-(price/ n_sets)* n , n_sets= n_sets- n where flight_num= f_id and PASSENGER_ID= p_id;
+  END IF;
 END;
 
 /
@@ -464,7 +461,7 @@ is
 begin
 open fligths for
 select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME "From Time", e.TO_TIME "To Time" 
-, e.PRICE "Price" , e.STATUE "Class" from FLIGHT e where FROM_CODE=from_ and TO_CODE=to_ and FROM_TIME> sysdate;        
+, e.PRICE "Price" , e.STATUE "Class",FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) "Avaible Sets" from FLIGHT e where FROM_CODE=from_ and TO_CODE=to_ and FROM_TIME> sysdate;        
 end;
 
 /
@@ -479,7 +476,7 @@ is
 begin
 open fligths for
 select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME "From Time", e.TO_TIME "To Time" 
-, e.PRICE "Price" , e.STATUE "Class",t.AIRPORT_NAME "To",fr.AIRPORT_NAME "From"
+, e.PRICE "Price" , e.STATUE "Class",t.AIRPORT_NAME "To",fr.AIRPORT_NAME "From", fn_getsets(e.FLIGHT_NUM,e.AIRPLAN_ID) "Avaible Sets"
 from FLIGHT e 
 INNER JOIN airport t ON t.AIRPORT_CODE=e.TO_CODE
 INNER JOIN airport fr ON fr.AIRPORT_CODE=e.FROM_CODE
@@ -496,8 +493,8 @@ set define off;
   CREATE OR REPLACE PROCEDURE "GET_AIRPORTS" (planes out sys_refcursor)is
 BEGIN
 open  planes  for
-select  *
-from   airport;
+select AIRPORT_CODE "ID" ,AIRPORT_NAME "Name", AIRPORT_CITY "City"
+from   airport ORDER BY AIRPORT_CODE;
 END;
 
 /
@@ -509,7 +506,7 @@ set define off;
 
   CREATE OR REPLACE PROCEDURE "GET_NUMBER_OF_FLIGTHS_OF_PASSS" (F_ID in NUMBER,P_ID in NUMBER,N OUT NUMBER) AS
 BEGIN
-  SELECT COUNT(*) into n from passenger_flight where passenger_id= p_id and flight_num= f_id;
+  SELECT sum(n_sets) into n from passenger_flight where passenger_id= p_id and flight_num= f_id;
 END GET_NUMBER_OF_FLIGTHS_OF_PASSS;
 
 /
@@ -525,7 +522,7 @@ max_sets number;
 taked_sets number;
 BEGIN
 select airplane_numseats into max_sets from airplane_info where airplane_id= planID;
-select count(*) into taked_sets FROM passenger_flight where flight_num= flightid;
+select nvl(sum(n_sets),0) into taked_sets FROM passenger_flight where flight_num= flightid;
 n:= max_sets- taked_sets;
 END;
 
@@ -554,8 +551,9 @@ set define off;
 is
 begin
 open  pass  for
-select p.passenger_id,p.passenger_fname,p.passenger_lname,p.passenger_email,p.passenger_phone,get_TicketsNum(p.passenger_id) "count"
-FROM passenger p where passenger_id= passid;
+select p.passenger_id,p.passenger_fname,p.passenger_lname,p.passenger_email,p.passenger_phone
+, GET_PRICE_SUM_PASS(p.passenger_id) "Total Price",get_TicketsNum(p.passenger_id) "Tikets"
+FROM passenger p where p.passenger_id= passid;
 end;
 
 /
@@ -581,14 +579,12 @@ set define off;
 
   CREATE OR REPLACE PROCEDURE "RESERVE_" (FlightID in NUMBER,u_ID in number,n_of_sets in number, price in number)
 is
-counter number;
+Temp_price number;
+total_price NUMBER;
 BEGIN
-  counter:= n_of_sets;
-  LOOP
-    INSERT INTO PASSENGER_FLIGHT (id, passenger_id, flight_num, price) VALUES (SEQUENCE1.nextval,u_id, flightid, price);
-    counter := counter - 1;
-    EXIT WHEN counter = 0;
-  END LOOP;
+    Temp_price:=(price* n_of_sets);
+    total_price:= temp_price+(temp_price * 0.15);
+    INSERT INTO PASSENGER_FLIGHT (id, passenger_id, flight_num, price, n_sets) VALUES (SEQUENCE1.nextval,u_id, flightid, total_price, n_of_sets);
 END;
 
 /

@@ -23,6 +23,21 @@ namespace flight_reservation
 				DAL.Data.cn = new Oracle.DataAccess.Client.OracleConnection("Data source=orcl;User Id=hr;Password = hr;");
 				DAL.Data.cn.Open();
 				//Application.Run(new PL.Reports());
+				//var da = new OracleDataAdapter("select * from problem", DAL.Data.cn);
+				//DataTable dt = new DataTable();
+				//da.Fill(dt);
+
+
+				//RPT.CrystalReport1 report = new RPT.CrystalReport1();
+				//report.SetDataSource(dt);
+
+
+				//RPT.rpt_view rpt_View = new RPT.rpt_view();
+				//rpt_View.crystalReportViewer1.ReportSource = report;
+
+
+				//rpt_View.Show();
+
 				Application.Run(new FRM_Start());
 			}
 			catch (Exception e)

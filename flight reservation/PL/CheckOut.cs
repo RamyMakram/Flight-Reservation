@@ -101,5 +101,11 @@ namespace flight_reservation.PL
 				MessageBox.Show("There Are Some Problems In App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
+		private void CB_Sets_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			int fligthsPrice = int.Parse(DGV_Flights.CurrentRow.Cells[4].Value.ToString()) * int.Parse(CB_Sets.Text);
+			LBL_Price.Text = ((fligthsPrice * 0.15) + fligthsPrice).ToString();
+		}
 	}
 }

@@ -40,20 +40,17 @@ namespace flight_reservation.PL
 				cmd.Parameters.Add("airports", OracleDbType.RefCursor, ParameterDirection.Output);
 				var x = cmd.ExecuteReader();
 				DataTable dt = new DataTable();
-				dt.Columns.Add("ID", typeof(int));
-				dt.Columns.Add("Name");
-				while (x.Read())
-				{
-					DGV_AirPort.Rows.Add(x.GetValue(0), x.GetValue(1), x.GetValue(2));
-					dt.Rows.Add(int.Parse(x.GetValue(0).ToString()), x.GetValue(1).ToString());
-				}
-				CB_From.DataSource = dt;
+				dt.Load(x);
+				DGV_AirPort.Columns.Clear();
+				DGV_AirPort.DataSource = dt;
+				CB_From.DataSource = dt.Copy();
 				CB_From.ValueMember = "ID";
 				CB_From.DisplayMember = "Name";
 				CB_To.DataSource = dt.Copy();
 				CB_To.ValueMember = "ID";
 				CB_To.DisplayMember = "Name";
-				CB_From.SelectedIndex = CB_Sate.SelectedIndex = 0; CB_To.SelectedIndex = 1;
+				CB_From.SelectedIndex = CB_Sate.SelectedIndex = 0;
+				CB_To.SelectedIndex = 1;
 			}
 			catch (Exception dddd)
 			{
@@ -81,11 +78,10 @@ namespace flight_reservation.PL
 			try
 			{
 				DGV_Flights.Columns.Clear();
-				OracleDataAdapter da_Fligths = new OracleDataAdapter("select e.FLIGHT_NUM,f.airport_name \"From\", e.FROM_TIME \"From Time\", t.airport_name \"To\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\",e.AIRPLAN_ID \"Flight Number\" from FLIGHT e inner join airport f on f.airport_code = e.FROM_CODE inner join airport t on t.airport_code = e.TO_CODE", DAL.Data.cn);
+				OracleDataAdapter da_Fligths = new OracleDataAdapter("select e.FLIGHT_NUM \"Fligth Number\",f.airport_name \"From\", e.FROM_TIME \"From Time\", t.airport_name \"To\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\",e.AIRPLAN_ID \"Plane Number\" from FLIGHT e inner join airport f on f.airport_code = e.FROM_CODE inner join airport t on t.airport_code = e.TO_CODE order by e.FLIGHT_NUM", DAL.Data.cn);
 				DataTable dt_Fligths = new DataTable();
 				da_Fligths.Fill(dt_Fligths);
 				DGV_Flights.DataSource = dt_Fligths;
-				DGV_Flights.Columns[0].Visible = false;
 				DGV_Flights.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Del", Text = "❌", UseColumnTextForButtonValue = true });
 				DGV_Flights.Columns.Add(new DataGridViewButtonColumn() { HeaderText = "Edit", Text = "✏", UseColumnTextForButtonValue = true });
 			}
@@ -515,8 +511,8 @@ namespace flight_reservation.PL
 		{
 			try
 			{
-				dt_Admin.Columns[0].Unique = true;
-				dt_Admin.PrimaryKey = new DataColumn[] { dt_Admin.Columns[0] };
+				//dt_Admin.Columns[0].Unique = true;
+				//dt_Admin.PrimaryKey = new DataColumn[] { dt_Admin.Columns[0] };
 				da_Admin.Update(dt_Admin);
 			}
 			catch (Exception ffff)

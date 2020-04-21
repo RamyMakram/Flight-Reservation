@@ -42,7 +42,7 @@ namespace flight_reservation
 				if (CB_From.SelectedValue != CB_To.SelectedValue)
 				{
 					OracleDataAdapter da_Fligths = new OracleDataAdapter("" +
-					"select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME \"From Time\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" , e.STATUE \"Class\" ,FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) \"Availbe Sets\" from FLIGHT e " +
+					"select e.FLIGHT_NUM,e.AIRPLAN_ID, e.FROM_TIME \"From Time\", e.TO_TIME \"To Time\" , e.PRICE \"Price\" ,((e.price*0.15)+e.price) \"Totale Price\", e.STATUE \"Class\" ,FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) \"Availbe Sets\" from FLIGHT e " +
 					"where FROM_CODE=:from_ and TO_CODE=:to_ and STATUE=:class_ and FROM_TIME>:date_ and FN_GetSets(e.FLIGHT_NUM,e.AIRPLAN_ID) >0", DAL.Data.cn);
 					da_Fligths.SelectCommand.Parameters.Add("from_", CB_From.SelectedValue);
 					da_Fligths.SelectCommand.Parameters.Add("to_", CB_To.SelectedValue);

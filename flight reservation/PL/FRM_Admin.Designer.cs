@@ -34,16 +34,16 @@ namespace flight_reservation.PL
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.BTN_AddPass = new System.Windows.Forms.Button();
 			this.TXT_Phone = new System.Windows.Forms.TextBox();
@@ -174,7 +174,7 @@ namespace flight_reservation.PL
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(795, 158);
+			this.groupBox1.Size = new System.Drawing.Size(816, 158);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Passengers";
@@ -286,7 +286,7 @@ namespace flight_reservation.PL
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox2.Location = new System.Drawing.Point(0, 158);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(795, 232);
+			this.groupBox2.Size = new System.Drawing.Size(816, 232);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Passengers";
@@ -298,14 +298,14 @@ namespace flight_reservation.PL
 			this.DGV_Pass.AllowUserToOrderColumns = true;
 			this.DGV_Pass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Pass.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Pass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Pass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this.DGV_Pass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Pass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PASSENGER_ID,
@@ -315,14 +315,14 @@ namespace flight_reservation.PL
             this.PASSENGER_PHONE,
             this.Delete,
             this.View});
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Pass.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle12.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Pass.DefaultCellStyle = dataGridViewCellStyle12;
 			this.DGV_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Pass.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Pass.Location = new System.Drawing.Point(3, 20);
@@ -330,7 +330,7 @@ namespace flight_reservation.PL
 			this.DGV_Pass.Name = "DGV_Pass";
 			this.DGV_Pass.ReadOnly = true;
 			this.DGV_Pass.RowHeadersWidth = 51;
-			this.DGV_Pass.Size = new System.Drawing.Size(789, 209);
+			this.DGV_Pass.Size = new System.Drawing.Size(810, 209);
 			this.DGV_Pass.TabIndex = 1;
 			this.DGV_Pass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Pass_CellClick);
 			// 
@@ -409,7 +409,7 @@ namespace flight_reservation.PL
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox3.Location = new System.Drawing.Point(0, 390);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(795, 137);
+			this.groupBox3.Size = new System.Drawing.Size(816, 137);
 			this.groupBox3.TabIndex = 3;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Airport";
@@ -481,7 +481,7 @@ namespace flight_reservation.PL
 			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox4.Location = new System.Drawing.Point(0, 527);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(795, 232);
+			this.groupBox4.Size = new System.Drawing.Size(816, 232);
 			this.groupBox4.TabIndex = 4;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "AirPorts";
@@ -493,14 +493,14 @@ namespace flight_reservation.PL
 			this.DGV_AirPort.AllowUserToOrderColumns = true;
 			this.DGV_AirPort.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_AirPort.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_AirPort.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_AirPort.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this.DGV_AirPort.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_AirPort.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -508,14 +508,14 @@ namespace flight_reservation.PL
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_AirPort.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_AirPort.DefaultCellStyle = dataGridViewCellStyle14;
 			this.DGV_AirPort.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_AirPort.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_AirPort.Location = new System.Drawing.Point(3, 20);
@@ -523,7 +523,7 @@ namespace flight_reservation.PL
 			this.DGV_AirPort.Name = "DGV_AirPort";
 			this.DGV_AirPort.ReadOnly = true;
 			this.DGV_AirPort.RowHeadersWidth = 51;
-			this.DGV_AirPort.Size = new System.Drawing.Size(789, 209);
+			this.DGV_AirPort.Size = new System.Drawing.Size(810, 209);
 			this.DGV_AirPort.TabIndex = 1;
 			this.DGV_AirPort.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_AirPort_CellClick);
 			// 
@@ -586,7 +586,7 @@ namespace flight_reservation.PL
 			this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox5.Location = new System.Drawing.Point(0, 759);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(795, 137);
+			this.groupBox5.Size = new System.Drawing.Size(816, 137);
 			this.groupBox5.TabIndex = 5;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "AirPlane";
@@ -615,7 +615,7 @@ namespace flight_reservation.PL
 			// 
 			// BTN_AddPlane
 			// 
-			this.BTN_AddPlane.Location = new System.Drawing.Point(324, 96);
+			this.BTN_AddPlane.Location = new System.Drawing.Point(325, 98);
 			this.BTN_AddPlane.Name = "BTN_AddPlane";
 			this.BTN_AddPlane.Size = new System.Drawing.Size(75, 23);
 			this.BTN_AddPlane.TabIndex = 2;
@@ -673,7 +673,7 @@ namespace flight_reservation.PL
 			this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox6.Location = new System.Drawing.Point(0, 896);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(795, 232);
+			this.groupBox6.Size = new System.Drawing.Size(816, 232);
 			this.groupBox6.TabIndex = 6;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Planes";
@@ -685,14 +685,14 @@ namespace flight_reservation.PL
 			this.DGV_Planes.AllowUserToOrderColumns = true;
 			this.DGV_Planes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Planes.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Planes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle15.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Planes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this.DGV_Planes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Planes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -701,14 +701,14 @@ namespace flight_reservation.PL
             this.dataGridViewButtonColumn3,
             this.Edit,
             this.View_Fligths});
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Planes.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Planes.DefaultCellStyle = dataGridViewCellStyle16;
 			this.DGV_Planes.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Planes.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Planes.Location = new System.Drawing.Point(3, 20);
@@ -716,7 +716,7 @@ namespace flight_reservation.PL
 			this.DGV_Planes.Name = "DGV_Planes";
 			this.DGV_Planes.ReadOnly = true;
 			this.DGV_Planes.RowHeadersWidth = 51;
-			this.DGV_Planes.Size = new System.Drawing.Size(789, 209);
+			this.DGV_Planes.Size = new System.Drawing.Size(810, 209);
 			this.DGV_Planes.TabIndex = 1;
 			this.DGV_Planes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Planes_CellClick);
 			// 
@@ -783,7 +783,7 @@ namespace flight_reservation.PL
 			this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox7.Location = new System.Drawing.Point(0, 1349);
 			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(795, 232);
+			this.groupBox7.Size = new System.Drawing.Size(816, 232);
 			this.groupBox7.TabIndex = 8;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Flights";
@@ -795,14 +795,14 @@ namespace flight_reservation.PL
 			this.DGV_Flights.AllowUserToOrderColumns = true;
 			this.DGV_Flights.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Flights.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Flights.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle17.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Flights.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
 			this.DGV_Flights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Flights.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.F_ID,
@@ -815,21 +815,21 @@ namespace flight_reservation.PL
             this.PlaneNumber,
             this.dataGridViewButtonColumn4,
             this.dataGridViewButtonColumn5});
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Flights.DefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle18.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Flights.DefaultCellStyle = dataGridViewCellStyle18;
 			this.DGV_Flights.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DGV_Flights.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Flights.Location = new System.Drawing.Point(3, 20);
 			this.DGV_Flights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.DGV_Flights.Name = "DGV_Flights";
 			this.DGV_Flights.RowHeadersWidth = 51;
-			this.DGV_Flights.Size = new System.Drawing.Size(789, 209);
+			this.DGV_Flights.Size = new System.Drawing.Size(810, 209);
 			this.DGV_Flights.TabIndex = 1;
 			this.DGV_Flights.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Flights_CellClick);
 			// 
@@ -925,7 +925,7 @@ namespace flight_reservation.PL
 			this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox8.Location = new System.Drawing.Point(0, 1128);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(795, 221);
+			this.groupBox8.Size = new System.Drawing.Size(816, 221);
 			this.groupBox8.TabIndex = 7;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Flight";
@@ -966,7 +966,6 @@ namespace flight_reservation.PL
 			this.CB_From.Location = new System.Drawing.Point(175, 37);
 			this.CB_From.Name = "CB_From";
 			this.CB_From.Size = new System.Drawing.Size(121, 24);
-			this.CB_From.Sorted = true;
 			this.CB_From.TabIndex = 5;
 			// 
 			// CB_FligthPNum
@@ -1008,7 +1007,6 @@ namespace flight_reservation.PL
 			this.CB_To.Location = new System.Drawing.Point(364, 37);
 			this.CB_To.Name = "CB_To";
 			this.CB_To.Size = new System.Drawing.Size(121, 24);
-			this.CB_To.Sorted = true;
 			this.CB_To.TabIndex = 5;
 			// 
 			// TXT_FligthID
@@ -1134,7 +1132,7 @@ namespace flight_reservation.PL
 			this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox9.Location = new System.Drawing.Point(0, 1581);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(795, 318);
+			this.groupBox9.Size = new System.Drawing.Size(816, 318);
 			this.groupBox9.TabIndex = 9;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Admin";
@@ -1144,14 +1142,14 @@ namespace flight_reservation.PL
 			this.DGV_Admin.AllowUserToOrderColumns = true;
 			this.DGV_Admin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DGV_Admin.BackgroundColor = System.Drawing.Color.White;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumTurquoise;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DGV_Admin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle19.BackColor = System.Drawing.Color.MediumTurquoise;
+			dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DGV_Admin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
 			this.DGV_Admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DGV_Admin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -1163,14 +1161,14 @@ namespace flight_reservation.PL
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewButtonColumn6,
             this.dataGridViewButtonColumn7});
-			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.LightSeaGreen;
-			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkCyan;
-			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DGV_Admin.DefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle20.ForeColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkCyan;
+			dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DGV_Admin.DefaultCellStyle = dataGridViewCellStyle20;
 			this.DGV_Admin.GridColor = System.Drawing.Color.Turquoise;
 			this.DGV_Admin.Location = new System.Drawing.Point(3, 64);
 			this.DGV_Admin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1249,7 +1247,7 @@ namespace flight_reservation.PL
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(816, 785);
+			this.ClientSize = new System.Drawing.Size(837, 785);
 			this.Controls.Add(this.groupBox9);
 			this.Controls.Add(this.groupBox7);
 			this.Controls.Add(this.groupBox8);

@@ -22,13 +22,18 @@ namespace flight_reservation.PL
 		private void BTN_AirPort_Click(object sender, EventArgs e)
 		{
 			frm = new RPT.rpt_view();
-			RPT.AirportDetail report = new RPT.AirportDetail();
 			OracleCommand cmd = new OracleCommand("get_airports", DAL.Data.cn);
 			cmd.CommandType = CommandType.StoredProcedure;
 			cmd.Parameters.Add("pass", OracleDbType.RefCursor, ParameterDirection.Output);
 			DataTable dt = new DataTable();
 			new OracleDataAdapter(cmd).Fill(dt);
+
+
+			RPT.AirportDetail report = new RPT.AirportDetail();
 			report.SetDataSource(dt);
+
+
+
 			frm.crystalReportViewer1.ReportSource = report;
 			frm.Show();
 		}
