@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Tuesday-April-21-2020   
+--  File created - Thursday-April-23-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence SEQUENCE1
@@ -79,44 +79,6 @@
 	"ID" NUMBER, 
 	"N_SETS" NUMBER DEFAULT 1
    ) ;
---------------------------------------------------------
---  DDL for Table PROBLEM
---------------------------------------------------------
-
-  CREATE TABLE "PROBLEM" 
-   (	"PASSENGER_ID" NUMBER(10,0), 
-	"PROBLEM_NAME" VARCHAR2(250), 
-	"PROBLEM_DEFINE" VARCHAR2(250)
-   ) ;
---------------------------------------------------------
---  DDL for Table SOLVE
---------------------------------------------------------
-
-  CREATE TABLE "SOLVE" 
-   (	"ADMINISTRATOR_ID" NUMBER(10,0), 
-	"PROBLEM_NAME" VARCHAR2(250)
-   ) ;
-
----------------------------------------------------
---   DATA FOR TABLE PROBLEM
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into PROBLEM
-Insert into PROBLEM (PASSENGER_ID,PROBLEM_NAME,PROBLEM_DEFINE) values (182,'dwddw','wdwd');
-
----------------------------------------------------
---   END DATA FOR TABLE PROBLEM
----------------------------------------------------
-
----------------------------------------------------
---   DATA FOR TABLE SOLVE
---   FILTER = none used
----------------------------------------------------
-REM INSERTING into SOLVE
-
----------------------------------------------------
---   END DATA FOR TABLE SOLVE
----------------------------------------------------
 
 ---------------------------------------------------
 --   DATA FOR TABLE PASSENGER_FLIGHT
@@ -292,18 +254,6 @@ Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (103,'Londo'
  
   ALTER TABLE "PASSENGER_FLIGHT" MODIFY ("ID" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table PROBLEM
---------------------------------------------------------
-
-  ALTER TABLE "PROBLEM" ADD CONSTRAINT "PROBNAME_IS_UNIQUE" UNIQUE ("PROBLEM_NAME") ENABLE;
- 
-  ALTER TABLE "PROBLEM" MODIFY ("PROBLEM_DEFINE" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table SOLVE
---------------------------------------------------------
-
-  ALTER TABLE "SOLVE" ADD PRIMARY KEY ("ADMINISTRATOR_ID", "PROBLEM_NAME") ENABLE;
---------------------------------------------------------
 --  DDL for Index PASSENGER_FLIGHT_PK
 --------------------------------------------------------
 
@@ -314,12 +264,6 @@ Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (103,'Londo'
 --------------------------------------------------------
 
   CREATE UNIQUE INDEX "PHONE_IS_UNIQUE" ON "PASSENGER" ("PASSENGER_PHONE") 
-  ;
---------------------------------------------------------
---  DDL for Index PROBNAME_IS_UNIQUE
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "PROBNAME_IS_UNIQUE" ON "PROBLEM" ("PROBLEM_NAME") 
   ;
 
 
@@ -343,21 +287,6 @@ Insert into AIRPORT (AIRPORT_CODE,AIRPORT_NAME,AIRPORT_CITY) values (103,'Londo'
  
   ALTER TABLE "PASSENGER_FLIGHT" ADD FOREIGN KEY ("FLIGHT_NUM")
 	  REFERENCES "FLIGHT" ("FLIGHT_NUM") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table PROBLEM
---------------------------------------------------------
-
-  ALTER TABLE "PROBLEM" ADD FOREIGN KEY ("PASSENGER_ID")
-	  REFERENCES "PASSENGER" ("PASSENGER_ID") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table SOLVE
---------------------------------------------------------
-
-  ALTER TABLE "SOLVE" ADD FOREIGN KEY ("ADMINISTRATOR_ID")
-	  REFERENCES "ADMINISTRATOR" ("ADMINISTRATOR_ID") ENABLE;
- 
-  ALTER TABLE "SOLVE" ADD FOREIGN KEY ("PROBLEM_NAME")
-	  REFERENCES "PROBLEM" ("PROBLEM_NAME") ENABLE;
 --------------------------------------------------------
 --  DDL for Function FN_GETSETS
 --------------------------------------------------------
@@ -438,9 +367,9 @@ end Add_Plane;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE PROCEDURE "CANCEL_RESERV" (F_ID IN NUMBER, P_ID IN NUMBER, N IN NUMBER) AS
+  CREATE OR REPLACE PROCEDURE "CANCEL_RESERV" (F_ID IN NUMBER, P_ID IN NUMBER, N IN NUMBER,TotalSets in Number) AS
 BEGIN
-  IF N=1 THEN
+  IF TotalSets=N THEN
     delete from PASSENGER_FLIGHT where flight_num= f_id and PASSENGER_ID= p_id;
   ELSE
     UPDATE PASSENGER_FLIGHT set price=price-((price/ n_sets)* n) , n_sets= n_sets- n where flight_num= f_id and PASSENGER_ID= p_id;
@@ -504,7 +433,7 @@ set define off;
 
   CREATE OR REPLACE PROCEDURE "GET_NUMBER_OF_FLIGTHS_OF_PASSS" (F_ID in NUMBER,P_ID in NUMBER,N OUT NUMBER) AS
 BEGIN
-  SELECT sum(n_sets) into n from passenger_flight where passenger_id= p_id and flight_num= f_id;
+  SELECT n_sets into n from passenger_flight where passenger_id= p_id and flight_num= f_id;
 END GET_NUMBER_OF_FLIGTHS_OF_PASSS;
 
 /
@@ -561,11 +490,10 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE PROCEDURE "REMOVE_PLANE" (plane in NUMBER,rows_del out number)
+  CREATE OR REPLACE PROCEDURE "REMOVE_PLANE" (plane in NUMBER)
 is
 begin
 delete from AIRPLANE_INFO where airplane_id= plane;
-rows_del:=SQL%ROWCOUNT;
 end remove_Plane;
 
 /

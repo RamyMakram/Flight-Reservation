@@ -14,7 +14,7 @@ namespace flight_reservation.PL
 	public partial class FRM_Admin : Form
 	{
 		OracleDataAdapter da_Admin;
-		OracleCommandBuilder cb_Admin;
+		OracleCommandBuilder commandBuilder_Admin;
 		DataTable dt_Admin;
 		public FRM_Admin()
 		{
@@ -93,7 +93,7 @@ namespace flight_reservation.PL
 			{
 				DGV_Admin.Columns.Clear();
 				da_Admin = new OracleDataAdapter("select * from ADMINISTRATOR", DAL.Data.cn);
-				cb_Admin = new OracleCommandBuilder(da_Admin);
+				commandBuilder_Admin = new OracleCommandBuilder(da_Admin);
 				dt_Admin = new DataTable();
 				da_Admin.Fill(dt_Admin);
 				DGV_Admin.DataSource = dt_Admin;
@@ -254,8 +254,8 @@ namespace flight_reservation.PL
 				OracleCommand cmd = new OracleCommand(@"update AIRPORT set AIRPORT_NAME=:name,AIRPORT_CITY=:city where AIRPORT_CODE=:id", DAL.Data.cn);
 				cmd.Parameters.Add(":name", TXT_AirName.Text);
 				cmd.Parameters.Add(":city", TXT_AirCity.Text);
-				cmd.Parameters.Add(":id", OracleDbType.Int16).Value = int.Parse(TXT_AirID.Text);
-				var x = cmd.ExecuteNonQuery();
+				cmd.Parameters.Add(":id", TXT_AirID.Text);
+				cmd.ExecuteNonQuery();
 				MessageBox.Show("Updated", "Success");
 				try
 				{
@@ -317,21 +317,12 @@ namespace flight_reservation.PL
 					{
 						try
 						{
-							//OracleCommand cmd = new OracleCommand(@"
-							//begin
-							//	remove_Plane(:Plane_ID,:Row_count);
-							//end;
-							//", DAL.Data.cn);
 							OracleCommand cmd = new OracleCommand("remove_Plane", DAL.Data.cn);
 							cmd.CommandType = CommandType.StoredProcedure;
 							cmd.Parameters.Add("Plane_ID", DGV_Planes.Rows[e.RowIndex].Cells[0].Value);
-							cmd.Parameters.Add("Row_count", OracleDbType.Int16, ParameterDirection.Output);
 							cmd.ExecuteNonQuery();
-							if (cmd.Parameters[1].Value.ToString() != "0")
-							{
-								MessageBox.Show("Deleted");
-								DGV_Planes.Rows.RemoveAt(e.RowIndex);
-							}
+							MessageBox.Show("Deleted");
+							DGV_Planes.Rows.RemoveAt(e.RowIndex);
 						}
 						catch (Exception dddd)
 						{
@@ -351,11 +342,11 @@ namespace flight_reservation.PL
 				{
 					try
 					{
-						OracleCommand cmd = new OracleCommand(@"
+						OracleCommand cmd = new OracleCommand($@"
 						select from_time from flight where flight_num=(
-							select MAX(flight_num) from flight where AIRPLAN_ID=:a_id
+							select MAX(flight_num) from flight where AIRPLAN_ID={DGV_Planes.Rows[e.RowIndex].Cells[0].Value}
 						) ", DAL.Data.cn);
-						cmd.Parameters.Add("a_id", int.Parse(DGV_Planes.Rows[e.RowIndex].Cells[0].Value.ToString()));
+
 						var x = cmd.ExecuteReader();
 						x.Read();
 						MessageBox.Show(x.GetValue(0).ToString(), "Last Launch");

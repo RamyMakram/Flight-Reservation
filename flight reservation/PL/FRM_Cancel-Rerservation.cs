@@ -13,6 +13,7 @@ namespace flight_reservation
 {
 	public partial class cancel : Form
 	{
+		int toalsets = 0;
 		public cancel()
 		{
 			InitializeComponent();
@@ -34,8 +35,8 @@ namespace flight_reservation
 				cmd.Parameters.Add("u_id", FRM_Home.U_ID);
 				cmd.Parameters.Add("n", OracleDbType.Int16, ParameterDirection.Output);
 				var x = cmd.ExecuteNonQuery();
-				int length = int.Parse(cmd.Parameters[2].Value.ToString());
-				if (length == 1)
+				toalsets = int.Parse(cmd.Parameters[2].Value.ToString());
+				if (toalsets == 1)
 				{
 					CB_SetsNum.Items.Add(1);
 					CB_SetsNum.SelectedIndex = 0;
@@ -46,7 +47,7 @@ namespace flight_reservation
 					BTN_Cancel.Visible = label12.Visible = CB_FlightNum.Visible = false;
 					BTN_Confirm.Visible = label1.Visible = CB_SetsNum.Visible = true;
 					CB_SetsNum.Items.Clear();
-					for (int i = 1; i <= length; i++)
+					for (int i = 1; i <= toalsets; i++)
 						CB_SetsNum.Items.Add(i);
 					CB_SetsNum.SelectedIndex = 0;
 				}
@@ -68,6 +69,7 @@ namespace flight_reservation
 					cmd.Parameters.Add("num", CB_FlightNum.Text);
 					cmd.Parameters.Add("u_id", FRM_Home.U_ID);
 					cmd.Parameters.Add("n", CB_SetsNum.Text);
+					cmd.Parameters.Add("totalSets", toalsets);
 					var x = cmd.ExecuteNonQuery();
 					MessageBox.Show("Ok");
 					button3_Click(null, null);
